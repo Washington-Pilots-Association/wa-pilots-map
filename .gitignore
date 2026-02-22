@@ -1,3 +1,5 @@
-*.csv
 *.zip
 wa_zip_geo.json
+PILOT_BASIC.csv
+NONPILOT_BASIC.csv
+us_geo_data.csv
