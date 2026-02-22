@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington State Pilots Heat Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        #header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        #header h1 { margin-bottom: 8px; }
+        #header p { opacity: 0.9; font-size: 14px; }
+        #map { height: calc(100vh - 180px); width: 100%; }
+        #legend {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        .legend-title { font-weight: 600; color: #333; }
+        .legend-scale {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .legend-bar {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(to right, #ffffcc, #ffeda0, #fed976, #feb24c, #fd8d3c, #fc4e2a, #e31a1c, #b10026);
+            border-radius: 3px;
+        }
+        .legend-labels { display: flex; justify-content: space-between; width: 200px; font-size: 12px; color: #666; }
+        .stats { font-size: 14px; color: #555; }
+        .stats strong { color: #1a365d; }
+        .info-box {
+            position: absolute;
+            top: 120px;
+            right: 10px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 14px;
+            max-width: 200px;
+        }
+        .info-box h4 { margin-bottom: 5px; color: #1a365d; }
+        .loader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 180px);
+            font-size: 18px;
+            color: #666;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2c5282;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>✈️ Washington State Pilots by ZIP Code</h1>
+        <p>Heat map visualization of FAA-registered pilots based on the Airmen Registry (February 2026)</p>
+    </div>
+    <div id="map">
+        <div class="loader">
+            <div class="spinner"></div>
+            <div>Loading map data...</div>
+        </div>
+    </div>
+    <div id="legend">
+        <span class="legend-title">Pilots per ZIP Code:</span>
+        <div>
+            <div class="legend-scale">
+                <span>0</span>
+                <div class="legend-bar"></div>
+                <span>250+</span>
+            </div>
+        </div>
+        <div class="stats">
+            Total WA Pilots: <strong id="total-pilots">Loading...</strong> | 
+            ZIP Codes: <strong id="total-zips">Loading...</strong>
+        </div>
+    </div>
+    <div class="info-box" id="info">
+        <h4>Hover over a ZIP code</h4>
+        <div>to see pilot count</div>
+    </div>
+
+    <script>
+        // Load data and create map
+        Promise.all([
+            fetch('wa_pilots_data.json').then(r => r.json()),
+            fetch('wa_zip_geo.json').then(r => r.json())
+        ]).then(([pilotData, geoData]) => {
+            // Create lookup from zip to count
+            const pilotCounts = {};
+            let totalPilots = 0;
+            pilotData.forEach(d => {
+                pilotCounts[d.zip] = d.count;
+                totalPilots += d.count;
+            });
+
+            document.getElementById('total-pilots').textContent = totalPilots.toLocaleString();
+            document.getElementById('total-zips').textContent = pilotData.length;
+
+            // Clear loader and create map
+            document.getElementById('map').innerHTML = '';
+            
+            const map = L.map('map').setView([47.4, -120.5], 7);
+            
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://carto.com/">CARTO</a> | FAA Airmen Registry',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Color scale function
+            function getColor(count) {
+                return count > 200 ? '#b10026' :
+                       count > 150 ? '#e31a1c' :
+                       count > 100 ? '#fc4e2a' :
+                       count > 75  ? '#fd8d3c' :
+                       count > 50  ? '#feb24c' :
+                       count > 25  ? '#fed976' :
+                       count > 10  ? '#ffeda0' :
+                       count > 0   ? '#ffffcc' :
+                                     '#f0f0f0';
+            }
+
+            function style(feature) {
+                const zip = feature.properties.ZCTA5CE10;
+                const count = pilotCounts[zip] || 0;
+                return {
+                    fillColor: getColor(count),
+                    weight: 1,
+                    opacity: 0.7,
+                    color: '#666',
+                    fillOpacity: count > 0 ? 0.7 : 0.2
+                };
+            }
+
+            const info = document.getElementById('info');
+
+            function highlightFeature(e) {
+                const layer = e.target;
+                layer.setStyle({
+                    weight: 3,
+                    color: '#333',
+                    fillOpacity: 0.9
+                });
+                layer.bringToFront();
+                
+                const zip = layer.feature.properties.ZCTA5CE10;
+                const count = pilotCounts[zip] || 0;
+                info.innerHTML = `<h4>ZIP: ${zip}</h4><div><strong>${count}</strong> registered pilots</div>`;
+            }
+
+            function resetHighlight(e) {
+                geojsonLayer.resetStyle(e.target);
+                info.innerHTML = '<h4>Hover over a ZIP code</h4><div>to see pilot count</div>';
+            }
+
+            function onEachFeature(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight
+                });
+            }
+
+            const geojsonLayer = L.geoJSON(geoData, {
+                style: style,
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
+        }).catch(err => {
+            console.error('Error loading data:', err);
+            document.getElementById('map').innerHTML = '<div class="loader">Error loading data. Please refresh.</div>';
+        });
+    </script>
+</body>
+</html>
