@@ -165,9 +165,13 @@
         
         @media (max-width: 900px) {
             #main-container { flex-direction: column; height: auto; }
-            #map { height: 50vh; }
+            #map { height: 55vh; min-height: 350px; order: -1; }
             #sidebar { width: 100%; border-left: none; border-top: 1px solid #e2e8f0; }
-            .info-box { right: 10px; top: 70px; }
+            .info-box { display: none; }
+            #header h1 { font-size: 1.2em; }
+            #legend { padding: 8px 10px; gap: 10px; position: sticky; bottom: 0; }
+            .legend-bar { width: 120px; }
+            .stat-card { margin-bottom: 10px; padding: 12px; }
         }
     </style>
 </head>
@@ -240,7 +244,7 @@
         // Load data and create map
         Promise.all([
             fetch('wa_pilots_full.json').then(r => r.json()),
-            fetch('wa_zip_geo.json').then(r => r.json())
+            fetch('wa_zip_geo_simple.json').then(r => r.json())
         ]).then(([data, geoData]) => {
             const pilotData = data.pilots;
             const summary = data.summary;
