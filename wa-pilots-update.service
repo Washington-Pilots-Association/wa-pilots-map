@@ -1,0 +1,18 @@
+[Unit]
+Description=Update WA Pilots heat map data from FAA
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=exedev
+WorkingDirectory=/home/exedev/wa-pilots
+ExecStart=/home/exedev/wa-pilots/update_data.sh
+StandardOutput=journal
+StandardError=journal
+
+# Timeout for the job (30 minutes should be plenty)
+TimeoutStartSec=1800
+
+[Install]
+WantedBy=multi-user.target
