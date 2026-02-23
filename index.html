@@ -3,37 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Washington State Pilots Heat Map</title>
+    <title>Washington Pilots by ZIP Code | WPA</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
+        :root {
+            --wpa-green: #12563a;
+            --wpa-green-light: #4d806b;
+            --wpa-teal: #01456a;
+            --wpa-red: #bc3225;
+            --wpa-gray: #f1f1f1;
+            --wpa-dark: #202b38;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        
         #header {
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            background: var(--wpa-teal);
             color: white;
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 10px;
         }
-        #header h1 { font-size: 1.5em; }
-        #header p { opacity: 0.9; font-size: 13px; }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-brand img {
+            height: 50px;
+            width: auto;
+        }
+        #header h1 { 
+            font-size: 1.4em; 
+            font-weight: 600;
+        }
+        #header p { 
+            opacity: 0.9; 
+            font-size: 12px; 
+        }
         .header-left { flex: 1; min-width: 300px; }
+        
+        .wpa-banner {
+            background: var(--wpa-green);
+            color: white;
+            text-align: center;
+            padding: 6px 15px;
+            font-size: 12px;
+        }
+        .wpa-banner a {
+            color: white;
+            text-decoration: underline;
+        }
         
         #main-container {
             display: flex;
-            height: calc(100vh - 130px);
+            height: calc(100vh - 160px);
         }
         
         #map { flex: 1; min-width: 0; }
         
         #sidebar {
             width: 320px;
-            background: #f8fafc;
-            border-left: 1px solid #e2e8f0;
+            background: var(--wpa-gray);
+            border-left: 1px solid #ddd;
             overflow-y: auto;
             padding: 15px;
         }
@@ -44,13 +80,15 @@
             padding: 15px;
             margin-bottom: 15px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--wpa-green);
         }
         .stat-card h3 {
             font-size: 13px;
             text-transform: uppercase;
-            color: #64748b;
+            color: var(--wpa-teal);
             margin-bottom: 10px;
             letter-spacing: 0.5px;
+            font-weight: 700;
         }
         .stat-grid {
             display: grid;
@@ -60,17 +98,17 @@
         .stat-item {
             text-align: center;
             padding: 8px;
-            background: #f1f5f9;
+            background: var(--wpa-gray);
             border-radius: 6px;
         }
         .stat-value {
             font-size: 1.5em;
             font-weight: 700;
-            color: #1a365d;
+            color: var(--wpa-green);
         }
         .stat-label {
             font-size: 11px;
-            color: #64748b;
+            color: #666;
             margin-top: 2px;
         }
         
@@ -92,7 +130,7 @@
         }
         .county-count, .zip-count {
             font-weight: 600;
-            color: #1a365d;
+            color: var(--wpa-green);
         }
         .zip-city {
             color: #64748b;
@@ -108,8 +146,9 @@
             gap: 20px;
             flex-wrap: wrap;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top: 2px solid var(--wpa-green);
         }
-        .legend-title { font-weight: 600; color: #333; font-size: 14px; }
+        .legend-title { font-weight: 600; color: var(--wpa-teal); font-size: 14px; }
         .legend-scale {
             display: flex;
             align-items: center;
@@ -119,7 +158,7 @@
         .legend-bar {
             width: 180px;
             height: 16px;
-            background: linear-gradient(to right, #ffffcc, #ffeda0, #fed976, #feb24c, #fd8d3c, #fc4e2a, #e31a1c, #b10026);
+            background: linear-gradient(to right, #e8f5e9, #a5d6a7, #66bb6a, #43a047, #2e7d32, #1b5e20, #12563a, #0a3622);
             border-radius: 3px;
         }
         
@@ -134,10 +173,11 @@
             z-index: 1000;
             font-size: 14px;
             min-width: 180px;
+            border-left: 4px solid var(--wpa-green);
         }
-        .info-box h4 { margin-bottom: 4px; color: #1a365d; font-size: 16px; }
+        .info-box h4 { margin-bottom: 4px; color: var(--wpa-teal); font-size: 16px; }
         .info-box .location { color: #64748b; font-size: 12px; margin-bottom: 6px; }
-        .info-box .count { font-size: 20px; font-weight: 700; color: #1a365d; }
+        .info-box .count { font-size: 20px; font-weight: 700; color: var(--wpa-green); }
         .info-box .count-label { font-size: 12px; color: #64748b; }
         
         .loader {
@@ -153,7 +193,7 @@
             width: 40px;
             height: 40px;
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #2c5282;
+            border-top: 4px solid var(--wpa-green);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin-bottom: 15px;
@@ -166,21 +206,30 @@
         @media (max-width: 900px) {
             #main-container { flex-direction: column; height: auto; }
             #map { height: 55vh; min-height: 350px; order: -1; }
-            #sidebar { width: 100%; border-left: none; border-top: 1px solid #e2e8f0; }
+            #sidebar { width: 100%; border-left: none; border-top: 1px solid #ddd; }
             .info-box { display: none; }
-            #header h1 { font-size: 1.2em; }
+            #header h1 { font-size: 1.1em; }
+            .header-brand img { height: 40px; }
             #legend { padding: 8px 10px; gap: 10px; position: sticky; bottom: 0; }
             .legend-bar { width: 120px; }
             .stat-card { margin-bottom: 10px; padding: 12px; }
+            .wpa-banner { font-size: 11px; padding: 5px 10px; }
         }
     </style>
 </head>
 <body>
     <div id="header">
-        <div class="header-left">
-            <h1>✈️ Washington State Pilots by ZIP Code</h1>
-            <p>Heat map visualization using FAA Airmen Registry data (February 2026)</p>
+        <div class="header-brand">
+            <img src="wpa_logo.png" alt="Washington Pilots Association">
+            <div class="header-left">
+                <h1>Washington Pilots by ZIP Code</h1>
+                <p>FAA Airmen Registry data visualization (February 2026)</p>
+            </div>
         </div>
+    </div>
+    <div class="wpa-banner">
+        Data source: <a href="https://www.faa.gov/licenses_certificates/airmen_certification/releasable_airmen_download" target="_blank">FAA Releasable Airmen Database</a> · 
+        Learn more at <a href="https://www.wpaflys.org" target="_blank">wpaflys.org</a>
     </div>
     
     <div id="main-container">
@@ -287,17 +336,17 @@
                 maxZoom: 19
             }).addTo(map);
 
-            // Color scale function
+            // WPA green color scale
             function getColor(count) {
-                return count > 200 ? '#b10026' :
-                       count > 150 ? '#e31a1c' :
-                       count > 100 ? '#fc4e2a' :
-                       count > 75  ? '#fd8d3c' :
-                       count > 50  ? '#feb24c' :
-                       count > 25  ? '#fed976' :
-                       count > 10  ? '#ffeda0' :
-                       count > 0   ? '#ffffcc' :
-                                     '#f0f0f0';
+                return count > 200 ? '#0a3622' :
+                       count > 150 ? '#12563a' :
+                       count > 100 ? '#1b5e20' :
+                       count > 75  ? '#2e7d32' :
+                       count > 50  ? '#43a047' :
+                       count > 25  ? '#66bb6a' :
+                       count > 10  ? '#a5d6a7' :
+                       count > 0   ? '#e8f5e9' :
+                                     '#f5f5f5';
             }
 
             function style(feature) {
@@ -319,7 +368,7 @@
                 const layer = e.target;
                 layer.setStyle({
                     weight: 3,
-                    color: '#333',
+                    color: '#01456a',
                     fillOpacity: 0.9
                 });
                 layer.bringToFront();
