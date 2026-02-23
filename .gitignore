@@ -1,5 +1,21 @@
+# Downloaded data files
 *.zip
-wa_zip_geo.json
 PILOT_BASIC.csv
 NONPILOT_BASIC.csv
 us_geo_data.csv
+
+# Large GeoJSON (use simplified version)
+wa_zip_geo.json
+
+# Generated GeoTIFF files (too large for git)
+seattle_mercator.tif
+seattle_rgba.vrt
+Seattle SEC.tif
+Seattle SEC.tfw
+Seattle SEC.htm
+
+# Generated tiles (too large for git)
+sectional-tiles/
+
+# Logs
+update.log
