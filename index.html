@@ -180,6 +180,49 @@
         .info-box .count { font-size: 20px; font-weight: 700; color: var(--wpa-green); }
         .info-box .count-label { font-size: 12px; color: #64748b; }
         
+        .chapter-marker {
+            background: var(--wpa-red);
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+        .chapter-marker.inactive {
+            background: #999;
+        }
+        .chapter-popup {
+            min-width: 200px;
+        }
+        .chapter-popup h3 {
+            color: var(--wpa-teal);
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            border-bottom: 2px solid var(--wpa-red);
+            padding-bottom: 5px;
+        }
+        .chapter-popup .airport {
+            font-weight: 600;
+            color: var(--wpa-green);
+            margin-bottom: 5px;
+        }
+        .chapter-popup .meeting {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .chapter-popup .contact {
+            font-size: 11px;
+            color: #777;
+        }
+        .chapter-popup .inactive-badge {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+        
         .loader {
             display: flex;
             flex-direction: column;
@@ -293,8 +336,9 @@
         // Load data and create map
         Promise.all([
             fetch('wa_pilots_full.json').then(r => r.json()),
-            fetch('wa_zip_geo_simple.json').then(r => r.json())
-        ]).then(([data, geoData]) => {
+            fetch('wa_zip_geo_simple.json').then(r => r.json()),
+            fetch('wpa_chapters.json').then(r => r.json())
+        ]).then(([data, geoData, chaptersData]) => {
             const pilotData = data.pilots;
             const summary = data.summary;
             
@@ -377,7 +421,7 @@
                 "🛰️ Satellite": satellite
             };
             
-            L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
+            // Layer control will be added after chapters layer is created
 
             // WPA green color scale
             function getColor(count) {
@@ -455,6 +499,48 @@
                 style: style,
                 onEachFeature: onEachFeature
             }).addTo(map);
+
+            // Create WPA Chapters layer
+            const chapterIcon = L.divIcon({
+                className: 'chapter-marker',
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+            
+            const inactiveIcon = L.divIcon({
+                className: 'chapter-marker inactive',
+                iconSize: [16, 16],
+                iconAnchor: [8, 8]
+            });
+
+            const chaptersLayer = L.geoJSON(chaptersData, {
+                pointToLayer: function(feature, latlng) {
+                    const isInactive = feature.properties.inactive;
+                    return L.marker(latlng, {
+                        icon: isInactive ? inactiveIcon : chapterIcon
+                    });
+                },
+                onEachFeature: function(feature, layer) {
+                    const p = feature.properties;
+                    const inactiveBadge = p.inactive ? '<span class="inactive-badge">Seeking Members</span>' : '';
+                    layer.bindPopup(`
+                        <div class="chapter-popup">
+                            <h3>✈️ ${p.name} Chapter</h3>
+                            <div class="airport">${p.airport}</div>
+                            <div class="meeting">📅 ${p.meeting}</div>
+                            <div class="contact">📧 ${p.contact}</div>
+                            ${inactiveBadge}
+                        </div>
+                    `);
+                }
+            }).addTo(map);
+
+            // Add layer control with chapters overlay
+            const overlayMaps = {
+                "🔴 WPA Chapters (21)": chaptersLayer
+            };
+            
+            L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(map);
 
         }).catch(err => {
             console.error('Error loading data:', err);
