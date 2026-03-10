@@ -26,6 +26,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Download sectional tiles from release
+        run: |
+          echo "Downloading sectional tiles..."
+          # Get the latest release with tiles
+          RELEASE_URL=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest | \
+            grep -o 'https://[^"]*sectional-tiles.tar.gz' | head -1) || true
+          
+          if [[ -n "$RELEASE_URL" ]]; then
+            echo "Downloading from: $RELEASE_URL"
+            curl -L -o sectional-tiles.tar.gz "$RELEASE_URL"
+            tar -xzf sectional-tiles.tar.gz
+            rm sectional-tiles.tar.gz
+            echo "Tiles extracted:"
+            du -sh sectional-tiles/
+          else
+            echo "No sectional tiles release found, skipping"
+          fi
+
       - name: Prepare site files
         run: |
           mkdir -p _site
@@ -42,10 +60,14 @@ jobs:
           # Copy sectional tiles if they exist
           if [[ -d "sectional-tiles" ]]; then
             cp -r sectional-tiles _site/
+            echo "Sectional tiles included"
+          else
+            echo "No sectional tiles to copy"
           fi
           
           echo "Site contents:"
-          find _site -type f
+          du -sh _site/
+          find _site -maxdepth 2 -type d
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

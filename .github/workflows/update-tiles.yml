@@ -1,0 +1,110 @@
+name: Update Sectional Tiles
+
+# Manual trigger only - sectional charts update every 56 days
+on:
+  workflow_dispatch:
+    inputs:
+      force_download:
+        description: 'Force download even if chart not expired'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-tiles:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install GDAL
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin python3-gdal
+
+      - name: Check current chart status
+        id: check
+        run: |
+          # Check if we have metadata about current chart
+          if [[ -f "data/sectional_metadata.json" ]]; then
+            EXPIRES=$(python3 -c "import json; print(json.load(open('data/sectional_metadata.json')).get('expires', ''))" || echo "")
+            TODAY=$(date +%Y-%m-%d)
+            echo "Current chart expires: $EXPIRES"
+            echo "Today: $TODAY"
+            
+            if [[ "$EXPIRES" > "$TODAY" ]] && [[ "${{ inputs.force_download }}" != "true" ]]; then
+              echo "Chart still valid, skipping update"
+              echo "skip=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          fi
+          echo "skip=false" >> $GITHUB_OUTPUT
+
+      - name: Download and process sectional
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          chmod +x scripts/update_sectional.sh
+          ./scripts/update_sectional.sh
+
+      - name: Create tiles archive
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          tar -czvf sectional-tiles.tar.gz sectional-tiles/
+          ls -lh sectional-tiles.tar.gz
+
+      - name: Get chart info for release
+        if: steps.check.outputs.skip != 'true'
+        id: chart_info
+        run: |
+          if [[ -f "data/sectional_metadata.json" ]]; then
+            EFFECTIVE=$(python3 -c "import json; print(json.load(open('data/sectional_metadata.json')).get('effective', 'unknown'))")
+            EXPIRES=$(python3 -c "import json; print(json.load(open('data/sectional_metadata.json')).get('expires', 'unknown'))")
+            echo "effective=$EFFECTIVE" >> $GITHUB_OUTPUT
+            echo "expires=$EXPIRES" >> $GITHUB_OUTPUT
+          else
+            echo "effective=unknown" >> $GITHUB_OUTPUT  
+            echo "expires=unknown" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create or update release
+        if: steps.check.outputs.skip != 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: sectional-tiles
+          name: Seattle VFR Sectional Tiles
+          body: |
+            VFR Sectional chart tiles for the Seattle area.
+            
+            - **Effective:** ${{ steps.chart_info.outputs.effective }}
+            - **Expires:** ${{ steps.chart_info.outputs.expires }}
+            - **Updated:** ${{ github.event.repository.updated_at }}
+            
+            These tiles are automatically downloaded during GitHub Pages deployment.
+          files: sectional-tiles.tar.gz
+          make_latest: true
+
+      - name: Commit metadata
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [[ -f "data/sectional_metadata.json" ]]; then
+            git add data/sectional_metadata.json
+            git commit -m "Update sectional chart metadata" || echo "No changes to commit"
+            git push
+          fi
+
+      - name: Trigger pages rebuild
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          # Trigger the deploy workflow
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy-pages.yml/dispatches \
+            -d '{"ref":"main"}'
