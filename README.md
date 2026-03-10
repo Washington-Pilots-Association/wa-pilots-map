@@ -2,7 +2,7 @@
 
 Interactive visualization of FAA-registered pilots in Washington State by ZIP code, featuring a VFR sectional chart base map.
 
-**Live Site:** [wpaflys.github.io/wa-pilots-map](https://wpaflys.github.io/wa-pilots-map) *(after GitHub Pages setup)*
+**Live Site:** [washington-pilots-association.github.io/wa-pilots-map](https://washington-pilots-association.github.io/wa-pilots-map/)
 
 ![WPA Pilots Map](https://img.shields.io/badge/WPA-Pilots%20Map-green)
 
@@ -75,7 +75,7 @@ Interactive visualization of FAA-registered pilots in Washington State by ZIP co
 
 ```bash
 # Clone the repository
-git clone https://github.com/wpaflys/wa-pilots-map.git
+git clone https://github.com/Washington-Pilots-Association/wa-pilots-map.git
 cd wa-pilots-map
 
 # Serve locally
@@ -133,7 +133,7 @@ Edit `data/wpa_chapters.json` directly. Each chapter is a GeoJSON Feature:
 ### Embed in WIX (wpaflys.org)
 ```html
 <iframe 
-  src="https://wpaflys.github.io/wa-pilots-map/" 
+  src="https://washington-pilots-association.github.io/wa-pilots-map/" 
   width="100%" 
   height="700px"
   frameborder="0">
