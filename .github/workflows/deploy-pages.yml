@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Prepare site files
+        run: |
+          mkdir -p _site
+          
+          # Copy web assets
+          cp index.html _site/
+          cp wpa_logo.png _site/
+          
+          # Copy data files
+          cp data/wa_pilots.json _site/wa_pilots_full.json
+          cp data/wa_zip_geo_simple.json _site/
+          cp data/wpa_chapters.json _site/
+          
+          # Copy sectional tiles if they exist
+          if [[ -d "sectional-tiles" ]]; then
+            cp -r sectional-tiles _site/
+          fi
+          
+          echo "Site contents:"
+          find _site -type f | head -20
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

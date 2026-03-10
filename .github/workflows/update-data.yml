@@ -1,0 +1,109 @@
+name: Update Pilot Data
+
+# Runs weekly on Sundays at 6:00 AM UTC
+on:
+  schedule:
+    - cron: '0 6 * * 0'
+  workflow_dispatch:  # Allow manual trigger
+    inputs:
+      force_sectional:
+        description: 'Force sectional chart update'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin python3-gdal unzip curl
+
+      - name: Download FAA Airmen Database
+        run: |
+          echo "Downloading FAA Airmen Database..."
+          curl -sSL -o airmen.zip \
+            --connect-timeout 60 \
+            --max-time 600 \
+            --retry 3 \
+            --retry-delay 10 \
+            "https://registry.faa.gov/database/ReleasableAirmen.zip"
+          
+          echo "Extracting PILOT_BASIC.csv..."
+          unzip -o -j airmen.zip PILOT_BASIC.csv -d .
+          
+          echo "File info:"
+          ls -lh PILOT_BASIC.csv
+          head -1 PILOT_BASIC.csv
+
+      - name: Process pilot data
+        run: |
+          python3 scripts/process_pilots.py
+
+      - name: Check for sectional chart updates
+        if: ${{ github.event.inputs.force_sectional == 'true' || github.event_name == 'schedule' }}
+        run: |
+          echo "Checking VFR sectional chart..."
+          # Check if current chart is expired
+          if [[ -f "data/sectional_metadata.json" ]]; then
+            EXPIRY=$(python3 -c "import json; print(json.load(open('data/sectional_metadata.json')).get('expires', ''))")
+            TODAY=$(date +%Y-%m-%d)
+            if [[ "$EXPIRY" < "$TODAY" ]] || [[ "${{ github.event.inputs.force_sectional }}" == "true" ]]; then
+              echo "Chart expired or force update requested, downloading new chart..."
+              ./scripts/update_sectional.sh
+            else
+              echo "Chart still valid until $EXPIRY"
+            fi
+          else
+            echo "No metadata found, downloading chart..."
+            ./scripts/update_sectional.sh
+          fi
+
+      - name: Update timestamp in index.html
+        run: |
+          CURRENT_MONTH=$(date '+%B %Y')
+          sed -i "s/(.*[0-9]\{4\})/(${CURRENT_MONTH})/g" index.html || true
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check for changes
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git add -A
+          git commit -m "Update pilot data - $(date '+%Y-%m-%d')
+          
+          Automated update from FAA Airmen Registry.
+          Total pilots: $(python3 -c "import json; print(json.load(open('data/wa_pilots.json'))['summary']['total_pilots'])")"
+          
+          git push
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: update-logs
+          path: |
+            update.log
+          retention-days: 30

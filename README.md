@@ -2,78 +2,155 @@
 
 Interactive visualization of FAA-registered pilots in Washington State by ZIP code, featuring a VFR sectional chart base map.
 
+**Live Site:** [wpaflys.github.io/wa-pilots-map](https://wpaflys.github.io/wa-pilots-map) *(after GitHub Pages setup)*
+
+![WPA Pilots Map](https://img.shields.io/badge/WPA-Pilots%20Map-green)
+
+## Features
+
+- 🗺️ Interactive heat map of pilot density by ZIP code
+- ✈️ FAA VFR Sectional Chart overlay
+- 🔴 WPA Chapter locations with meeting info
+- 📊 County and ZIP code statistics
+- 📱 Mobile-responsive design
+- 🔄 Weekly automated data updates
+
 ## Data Sources
 
-- **Pilot Data**: [FAA Releasable Airmen Database](https://www.faa.gov/licenses_certificates/airmen_certification/releasable_airmen_download)
-- **VFR Sectional**: [FAA Seattle Sectional Chart](https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/)
-- **ZIP Code Boundaries**: US Census ZCTA shapefiles
+| Data | Source | Update Frequency |
+|------|--------|------------------|
+| Pilot Data | [FAA Releasable Airmen Database](https://www.faa.gov/licenses_certificates/airmen_certification/releasable_airmen_download) | Weekly (automated) |
+| VFR Sectional | [FAA Seattle Sectional Chart](https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/) | Every 56 days |
+| ZIP Boundaries | US Census ZCTA shapefiles | Static |
+| WPA Chapters | Manual maintenance | As needed |
 
-## Automated Updates
+## Repository Structure
 
-The data is automatically updated weekly via a systemd timer:
-
-- **Schedule**: Every Sunday at 3:00 AM UTC
-- **Timer**: `wa-pilots-update.timer`
-- **Service**: `wa-pilots-update.service`
-
-### Manual Update
-
-To manually trigger an update:
-
-```bash
-# Run the update script directly
-./update_data.sh
-
-# Or trigger via systemd
-sudo systemctl start wa-pilots-update.service
-
-# Force re-download of sectional chart
-./update_data.sh --force-sectional
+```
+├── index.html              # Main interactive map page
+├── wpa_logo.png            # WPA logo
+├── data/
+│   ├── wa_pilots.json      # Pilot counts and statistics
+│   ├── wa_zip_geo_simple.json  # ZIP code boundaries (GeoJSON)
+│   ├── wpa_chapters.json   # WPA chapter locations (GeoJSON)
+│   ├── zip_to_city.csv     # ZIP to city/county mapping
+│   └── sectional_metadata.json  # Chart version info
+├── scripts/
+│   ├── process_pilots.py   # FAA data processing
+│   └── update_sectional.sh # Sectional chart processor
+├── sectional-tiles/        # Generated map tiles (git-ignored, built in CI)
+└── .github/workflows/
+    ├── update-data.yml     # Weekly FAA data update
+    ├── deploy-pages.yml    # GitHub Pages deployment
+    └── update-chapters.yml # Manual chapter updates
 ```
 
-### Check Timer Status
+## GitHub Actions Workflows
+
+### 1. Update Pilot Data (`update-data.yml`)
+- **Schedule:** Weekly on Sundays at 6:00 AM UTC
+- **Trigger:** Manual via workflow_dispatch
+- **Actions:**
+  - Downloads latest FAA Airmen Registry
+  - Extracts Washington pilot data
+  - Generates statistics JSON
+  - Checks for sectional chart updates
+  - Commits changes automatically
+
+### 2. Deploy to GitHub Pages (`deploy-pages.yml`)
+- **Trigger:** On push to main branch
+- **Actions:**
+  - Builds static site
+  - Deploys to GitHub Pages
+
+### 3. Update Chapters (`update-chapters.yml`)
+- **Trigger:** Manual only
+- **Actions:**
+  - Validates chapter GeoJSON
+  - Commits any changes
+
+## Development
+
+### Local Development
 
 ```bash
-# View timer status and next run time
-systemctl list-timers wa-pilots-update.timer
+# Clone the repository
+git clone https://github.com/wpaflys/wa-pilots-map.git
+cd wa-pilots-map
 
-# View recent logs
-journalctl -u wa-pilots-update.service -n 50
+# Serve locally
+python3 -m http.server 8000
+# or
+busybox httpd -f -p 8000 -h .
+
+# Open http://localhost:8000
 ```
 
-## Files
+### Manual Data Update
 
-| File | Description |
-|------|-------------|
-| `index.html` | Main interactive map page |
-| `update_data.sh` | Main update script (downloads FAA data, processes stats) |
-| `process_sectional.sh` | Processes VFR sectional GeoTIFF into web tiles |
-| `wa_pilots_full.json` | Generated pilot data with statistics |
-| `wa_pilots_by_zip.txt` | Simple tab-separated pilot counts |
-| `wa_zip_geo_simple.json` | Simplified ZIP code boundaries for fast loading |
-| `sectional-tiles/` | Generated VFR sectional map tiles |
+```bash
+# Download FAA data
+curl -o airmen.zip https://registry.faa.gov/database/ReleasableAirmen.zip
+unzip -j airmen.zip PILOT_BASIC.csv
 
-## Update Process
+# Process
+python3 scripts/process_pilots.py
+```
 
-The `update_data.sh` script performs these steps:
+### Updating WPA Chapters
 
-1. **Download FAA Airmen Database** - Downloads the latest PILOT_BASIC.csv from FAA
-2. **Check VFR Sectional** - Compares chart expiration dates, downloads new chart if expired
-3. **Process Sectional** - If new chart downloaded, reprojects and generates tiles
-4. **Extract WA Pilots** - Filters WA state pilots, counts by ZIP code
-5. **Generate Statistics** - Calculates totals, averages, county breakdowns
-6. **Update JSON** - Writes wa_pilots_full.json for the heat map
+Edit `data/wpa_chapters.json` directly. Each chapter is a GeoJSON Feature:
 
-## VFR Chart Cycle
+```json
+{
+  "type": "Feature",
+  "properties": {
+    "name": "Chapter Name",
+    "airport": "Airport Name (ICAO)",
+    "meeting": "Meeting schedule",
+    "contact": "contact@email.com",
+    "inactive": false
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-122.0000, 47.0000]
+  }
+}
+```
 
-FAA VFR sectional charts are updated every 56 days. The script checks the chart's expiration date from metadata and automatically downloads updates when available.
+## Deployment Options
 
-## Dependencies
+### GitHub Pages (Recommended)
+1. Enable GitHub Pages in repository settings
+2. Set source to "GitHub Actions"
+3. Site deploys automatically on push
 
-- Python 3
-- GDAL (`gdalwarp`, `gdal2tiles.py`)
-- curl, unzip
+### Custom Domain
+1. Add CNAME file with your domain
+2. Configure DNS to point to GitHub Pages
+3. Enable HTTPS in repository settings
+
+### Embed in WIX (wpaflys.org)
+```html
+<iframe 
+  src="https://wpaflys.github.io/wa-pilots-map/" 
+  width="100%" 
+  height="700px"
+  frameborder="0">
+</iframe>
+```
 
 ## License
 
 FAA aeronautical data is public domain. This visualization is provided for informational purposes only.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make changes
+4. Submit a pull request
+
+---
+
+*Maintained by [Washington Pilots Association](https://wpaflys.org)*

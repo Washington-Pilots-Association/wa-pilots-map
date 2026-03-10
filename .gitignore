@@ -1,21 +1,43 @@
-# Downloaded data files
+# Downloaded data files (too large for git)
 *.zip
 PILOT_BASIC.csv
 NONPILOT_BASIC.csv
-us_geo_data.csv
 
 # Large GeoJSON (use simplified version)
 wa_zip_geo.json
 
 # Generated GeoTIFF files (too large for git)
-seattle_mercator.tif
-seattle_rgba.vrt
-Seattle SEC.tif
-Seattle SEC.tfw
+*.tif
+*.tfw
+*.vrt
 Seattle SEC.htm
 
-# Generated tiles (too large for git)
+# Generated tiles - built in CI, stored as release artifact or served separately
 sectional-tiles/
 
 # Logs
+*.log
 update.log
+
+# Legacy files (moved to data/)
+# Keep these ignored to prevent accidental commits
+/us_geo_data.csv
+/zip_to_city.csv
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Build artifacts
+_site/
