@@ -337,7 +337,7 @@
         Promise.all([
             fetch('wa_pilots_full.json').then(r => r.json()),
             fetch('wa_zip_geo_simple.json').then(r => r.json()),
-            fetch('wpa_chapters.json').then(r => r.json())
+            fetch('wpa_chapters.json?v=' + Date.now()).then(r => r.json())
         ]).then(([data, geoData, chaptersData]) => {
             const pilotData = data.pilots;
             const summary = data.summary;
