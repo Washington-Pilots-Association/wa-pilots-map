@@ -1,7 +1,10 @@
 name: Update WPA Chapters
 
-# Manual trigger only - chapter data changes infrequently
+# Triggered when chapter data changes or manually
 on:
+  push:
+    paths:
+      - 'data/wpa_chapters.json'
   workflow_dispatch:
     inputs:
       source_url:

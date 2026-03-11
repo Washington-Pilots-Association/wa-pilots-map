@@ -1,0 +1,6 @@
+# FAA Data Update Trigger
+#
+# Modify this file and commit to trigger the FAA Airmen Database update workflow.
+# Simply update the timestamp below and push to main.
+#
+# Last triggered: never

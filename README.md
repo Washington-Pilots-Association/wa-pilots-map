@@ -49,7 +49,10 @@ Interactive visualization of FAA-registered pilots in Washington State by ZIP co
 
 ### 1. Update Pilot Data (`update-data.yml`)
 - **Schedule:** Weekly on Sundays at 6:00 AM UTC
-- **Trigger:** Manual via workflow_dispatch
+- **Triggers:**
+  - Scheduled (weekly)
+  - Manual via workflow_dispatch
+  - Commit to `.trigger-faa-update` file
 - **Actions:**
   - Downloads latest FAA Airmen Registry
   - Extracts Washington pilot data
@@ -64,7 +67,9 @@ Interactive visualization of FAA-registered pilots in Washington State by ZIP co
   - Deploys to GitHub Pages
 
 ### 3. Update Chapters (`update-chapters.yml`)
-- **Trigger:** Manual only
+- **Triggers:**
+  - Commit to `data/wpa_chapters.json`
+  - Manual via workflow_dispatch
 - **Actions:**
   - Validates chapter GeoJSON
   - Commits any changes
