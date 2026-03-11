@@ -36,21 +36,60 @@ jobs:
           sudo apt-get install -y gdal-bin python3-gdal unzip curl
 
       - name: Download FAA Airmen Database
+        id: download
         run: |
           echo "Downloading FAA Airmen Database..."
-          curl -sSL -o airmen.zip \
-            --connect-timeout 60 \
-            --max-time 600 \
-            --retry 3 \
-            --retry-delay 10 \
-            "https://registry.faa.gov/database/ReleasableAirmen.zip"
+          
+          # FAA servers can be slow - use aggressive retry settings
+          MAX_ATTEMPTS=5
+          ATTEMPT=1
+          SUCCESS=false
+          
+          while [[ $ATTEMPT -le $MAX_ATTEMPTS ]]; do
+            echo "Download attempt $ATTEMPT of $MAX_ATTEMPTS..."
+            
+            if curl -L -o airmen.zip \
+              --connect-timeout 120 \
+              --max-time 900 \
+              --retry 2 \
+              --retry-delay 30 \
+              --retry-all-errors \
+              -H "User-Agent: Mozilla/5.0 (compatible; WA-Pilots-Map/1.0)" \
+              "https://registry.faa.gov/database/ReleasableAirmen.zip"; then
+              
+              # Verify we got a valid zip file
+              if unzip -t airmen.zip > /dev/null 2>&1; then
+                echo "Download successful and zip file valid"
+                SUCCESS=true
+                break
+              else
+                echo "Downloaded file is not a valid zip, retrying..."
+                rm -f airmen.zip
+              fi
+            else
+              echo "curl failed with exit code $?"
+            fi
+            
+            ATTEMPT=$((ATTEMPT + 1))
+            if [[ $ATTEMPT -le $MAX_ATTEMPTS ]]; then
+              echo "Waiting 60 seconds before retry..."
+              sleep 60
+            fi
+          done
+          
+          if [[ "$SUCCESS" != "true" ]]; then
+            echo "::error::Failed to download FAA Airmen Database after $MAX_ATTEMPTS attempts"
+            echo "download_failed=true" >> $GITHUB_OUTPUT
+            exit 1
+          fi
           
           echo "Extracting PILOT_BASIC.csv..."
           unzip -o -j airmen.zip PILOT_BASIC.csv -d .
           
           echo "File info:"
           ls -lh PILOT_BASIC.csv
-          head -1 PILOT_BASIC.csv
+          echo "Record count: $(wc -l < PILOT_BASIC.csv)"
+          echo "download_failed=false" >> $GITHUB_OUTPUT
 
       - name: Process pilot data
         run: |
@@ -91,19 +130,32 @@ jobs:
             exit 0
           fi
           
+          # Get pilot count for commit message
+          PILOT_COUNT=$(python3 -c "import json; print(json.load(open('data/wa_pilots.json'))['summary']['total_pilots'])" 2>/dev/null || echo "unknown")
+          
           git add -A
           git commit -m "Update pilot data - $(date '+%Y-%m-%d')
           
           Automated update from FAA Airmen Registry.
-          Total pilots: $(python3 -c "import json; print(json.load(open('data/wa_pilots.json'))['summary']['total_pilots'])")"
+          Total pilots: $PILOT_COUNT"
           
           git push
 
-      - name: Upload artifacts
+      - name: Trigger pages deployment
+        if: success()
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy-pages.yml/dispatches" \
+            -d '{"ref":"main"}' || echo "Could not trigger pages deployment"
+
+      - name: Upload logs
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: update-logs
+          name: update-logs-${{ github.run_id }}
           path: |
-            update.log
+            *.log
           retention-days: 30
+          if-no-files-found: ignore
