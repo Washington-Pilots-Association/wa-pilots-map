@@ -1,0 +1,575 @@
+ZIP	COUNT	CITY	COUNTY
+98335	267	Gig Harbor	Pierce
+98607	247	Camas	Clark
+98391	228		
+98221	201	Anacortes	Skagit
+98277	197	Oak Harbor	Island
+98332	186	Gig Harbor	Pierce
+98042	162	Kent	King
+98604	154	Battle Ground	Clark
+98012	145	Mill Creek	Snohomish
+98837	142	Moses Lake	Grant
+98103	138	Seattle	King
+98116	137	Seattle	King
+98682	136	Vancouver	Clark
+98382	135	Sequim	Clallam
+98052	135	Redmond	King
+98671	135	Washougal	Clark
+98225	135	Bellingham	Whatcom
+98092	134	Zcta 98092	King
+98226	133	Bellingham	Whatcom
+98258	132	Lake Stevens	Snohomish
+99208	128	Spokane	Spokane
+98290	128	Snohomish	Snohomish
+98115	126	Seattle	King
+98110	126	Bainbridge Islan	Kitsap
+98223	126	Arlington	Snohomish
+98038	121	Maple Valley	King
+98027	120	Issaquah	King
+98926	120	Ellensburg	Kittitas
+98501	119	Olympia	Thurston
+98374	119	Puyallup	Pierce
+98229	117		
+98006	115	Bellevue	King
+98801	114	Wenatchee	Chelan
+98058	113	Renton	King
+98033	112	Kirkland	King
+99301	112	Pasco	Franklin
+99362	109	Walla Walla	Walla Walla
+99224	106	Spokane	Spokane
+98059	105	Renton	King
+98034	104	Kirkland	King
+98642	104	Ridgefield	Clark
+98004	103	Beaux Arts	King
+98208	103	Everett	Snohomish
+98908	101	Wide Hollow	Yakima
+98250	99	Friday Harbor	San Juan
+98166	97	Normandy Park	King
+98275	97	Mukilteo	Snohomish
+99163	97	Pullman	Whitman
+99223	95	Spokane	Spokane
+98513	93	Lacey	Thurston
+98296	93	Zcta 98296	Snohomish
+98109	93	Seattle	King
+98040	92	Mercer Island	King
+98338	91	Graham	Pierce
+98684	90	Cascade Park	Clark
+98512	90	Olympia	Thurston
+98685	88	Felida	Clark
+98661	88	Vancouver	Clark
+98023	88	Federal Way	King
+98117	87	Seattle	King
+98022	87	Enumclaw	King
+98367	86	Zcta 98367	Kitsap
+98026	86	Edmonds	Snohomish
+98370	86	Poulsbo	Kitsap
+98321	85	Buckley	Pierce
+98125	84	Seattle	King
+98516	83	Lacey	Thurston
+99352	81	Richland	Benton
+99206	81	Spokane	Spokane
+98118	80	Seattle	King
+98122	79	Seattle	King
+98072	78	Woodinville	King
+98292	77	Stanwood	Snohomish
+98105	77	Seattle	King
+98387	77	Spanaway	Pierce
+98203	76	Everett	Snohomish
+98056	75	Renton	King
+98466	75	Fircrest	Pierce
+98074	75		
+98407	75	Tacoma	Pierce
+98802	74	East Wenatchee	Douglas
+98502	74	Olympia	Thurston
+98102	74	Seattle	King
+98375	72	Zcta 98375	Pierce
+98422	72	Tacoma	Pierce
+98107	72	Seattle	King
+98584	71	Shelton	Mason
+98155	71	Lk Forest Park	King
+98075	70		
+98011	70	Bothell	King
+98664	69	Vancouver	Clark
+99203	69	Spokane	Spokane
+98683	68	Zcta 98683	Clark
+98121	68	Seattle	King
+98606	67	Brush Prairie	Clark
+98020	67	Woodway	Snohomish
+98029	66	Zcta 98029	King
+98036	66	Brier	Snohomish
+98270	66	Marysville	Snohomish
+98597	65	Yelm	Thurston
+98672	65	White Salmon	Klickitat
+98366	64	South Park Villa	Kitsap
+98126	64	Seattle	King
+99403	63	Clarkston	Asotin
+99205	62	Spokane	Spokane
+98045	62	North Bend	King
+98248	62	Ferndale	Whatcom
+98372	62	Puyallup	Pierce
+98362	61	Port Angeles	Clallam
+98498	61	Lakewood Center	Pierce
+98198	61	Des Moines	King
+98264	61	Lynden	Whatcom
+98532	61	Chehalis	Lewis
+98144	61	Seattle	King
+98686	60	Vancouver	Clark
+99019	59	Liberty Lake	Spokane
+98273	59	Mount Vernon	Skagit
+98662	59	Orchards	Clark
+98005	59	Bellevue	King
+98272	59	Monroe	Snohomish
+98199	58	Seattle	King
+98021	58	Bothell	Snohomish
+98136	58	Seattle	King
+98333	56	Fox Island	Pierce
+98201	56	Everett	Snohomish
+98133	55	Seattle	King
+98028	55	Kenmore	King
+98001	54	Algona	King
+98282	54		
+98383	54	Silverdale	Kitsap
+98503	54	Lacey	Thurston
+98031	53	Kent	King
+98077	53		
+98665	53	Hazel Dell	Clark
+98312	53	Bremerton	Kitsap
+98632	53	Longview	Cowlitz
+98101	53	Seattle	King
+98177	51	Seattle	King
+99212	51	Spokane	Spokane
+98055	51	Renton	King
+98371	50	Puyallup	Pierce
+98087	50		
+98373	49	Puyallup	Pierce
+98119	49	Seattle	King
+98406	49	Tacoma	Pierce
+98112	49	Seattle	King
+98368	48	Port Townsend	Jefferson
+98271	48	Marysville	Snohomish
+98146	48	Burien	King
+98826	48	Leavenworth	Chelan
+98032	47	Kent	King
+98003	47	Federal Way	King
+99324	46	College Place	Walla Walla
+99016	46	Greenacres	Spokane
+99337	46	Kennewick	Benton
+98245	46	Eastsound	San Juan
+99338	46	Zcta 99338	Benton
+98499	46	Lakewood Center	Pierce
+98008	46	Bellevue	King
+99354	45		
+98274	45	Zcta 98274	Skagit
+99026	45	Nine Mile Falls	Stevens
+98070	45	Vashon	King
+98065	45	Snoqualmie	King
+98284	44	Sedro Woolley	Skagit
+98168	43	Tukwila	King
+98311	41	Bremerton	Kitsap
+98230	41	Blaine	Whatcom
+99336	41	Kennewick	Benton
+98204	41	Everett	Snohomish
+98663	41	Vancouver	Clark
+98106	40	Seattle	King
+99353	40	Zcta 99353	Benton
+99114	40	Colville	Stevens
+98942	40	Selah	Yakima
+99006	39	Deer Park	Spokane
+99202	39	Spokane	Spokane
+98626	39	Kelso	Cowlitz
+98674	39	Woodland	Cowlitz
+99021	39	Mead	Spokane
+98360	38	Orting	Pierce
+98660	38	Vancouver	Clark
+99201	38	Spokane	Spokane
+99005	38	Colbert	Spokane
+99217	37	Spokane	Spokane
+98329	37	Gig Harbor	Pierce
+98030	37		
+98053	37	Redmond	King
+98328	37	Eatonville	Pierce
+99004	37	Cheney	Spokane
+99216	37	Spokane	Spokane
+98019	37	Duvall	King
+98390	36	Bonney Lake	Pierce
+98236	36	Clinton	Island
+98178	36	Tukwila	King
+98260	36	Langley	Island
+98506	35	Lacey	Thurston
+98629	35	La Center	Clark
+98902	34	Yakima	Yakima
+98359	34	Olalla	Kitsap
+98010	34	Black Diamond	King
+98037	33	Lynnwood	Snohomish
+98007	33	Bellevue	King
+98445	33	Parkland	Pierce
+98901	32	Terrace Heights	Yakima
+98024	32	Fall City	King
+98531	32	Centralia	Lewis
+98188	32	Tukwila	King
+99350	30	Prosser	Benton
+98467	30	Tacoma	Pierce
+99218	30	Spokane	Spokane
+98363	30	Zcta 98363	Clallam
+98823	29	Ephrata	Grant
+98239	29	Coupeville	Island
+99022	29	Espanola	Spokane
+99207	29	Spokane	Spokane
+98310	29	Bremerton	Kitsap
+98108	29	Tukwila	King
+99037	28	Veradale	Spokane
+98444	28	Parkland	Pierce
+98402	28	Tacoma	Pierce
+98404	28	Tacoma	Pierce
+98057	27		
+98233	27	Burlington	Skagit
+98249	27	Freeland	Island
+98409	27	Tacoma	Pierce
+99156	27	Newport	Pend Oreille
+98002	26	Auburn	King
+98261	25	Lopez	San Juan
+99344	25	Mattawa	Adams
+98043	25	Mountlake Terrac	Snohomish
+98922	25	Cle Elum	Kittitas
+98580	25	Roy	Pierce
+98403	25	Tacoma	Pierce
+98327	24	Du Pont	Pierce
+98232	24	Bow	Skagit
+98014	24	Carnation	King
+98257	23	La Conner	Skagit
+98346	23	Kingston	Kitsap
+98848	23	Quincy	Grant
+99003	22	Chattaroy	Spokane
+98405	22	Tacoma	Pierce
+98039	22	Medina	King
+98620	22	Goldendale	Klickitat
+98816	22	Chelan	Chelan
+98862	22	Winthrop	Okanogan
+98675	21	Yacolt	Clark
+98104	21	Seattle	King
+98365	21	Port Ludlow	Jefferson
+98446	21	Parkland	Pierce
+98520	21	Aberdeen	Grays Harbor
+98408	21	Tacoma	Pierce
+98648	20	Stevenson	Skamania
+98815	20	Cashmere	Chelan
+99109	20	Chewelah	Stevens
+98349	20	Home	Pierce
+98528	20	Bear Creek	Mason
+98625	19	Kalama	Cowlitz
+98148	19	Normandy Park	King
+99036	19	Valleyford	Spokane
+99320	19	Benton City	Benton
+98579	19	Rochester	Thurston
+98388	18	Steilacoom	Pierce
+98424	18	Fife	Pierce
+99204	18	Spokane	Spokane
+98856	17	Twisp	Okanogan
+99025	17	Newman Lake	Spokane
+98903	17	Union Gap	Yakima
+98930	16	Grandview	Yakima
+98380	16	Seabeck	Kitsap
+98252	15	Granite Falls	Snohomish
+98465	15	Tacoma	Pierce
+98051	15	Ravensdale	King
+98354	14	Milton	Pierce
+99111	14	Colfax	Whitman
+98601	14	Amboy	Clark
+98443	14	Tacoma	Pierce
+98591	14	Toledo	Lewis
+99009	14	Elk	Spokane
+98953	14	Zillah	Yakima
+98569	13	Ocean City	Grays Harbor
+99166	13	Republic	Ferry
+98841	13	Omak	Okanogan
+98247	13	Everson	Whatcom
+99027	13	Otis Orchards	Spokane
+98611	13	Castle Rock	Cowlitz
+98294	12	Sultan	Snohomish
+99349	12	Zcta 99349	Grant
+98576	12	Rainier	Thurston
+98541	12	Elma	Grays Harbor
+98855	12	Tonasket	Okanogan
+99141	12	Kettle Falls	Stevens
+98612	11	Cathlamet	Wahkiakum
+98546	11	Grapeview	Mason
+98253	11	Greenbank	Island
+98596	11	Winlock	Lewis
+98650	11	Trout Lake	Klickitat
+98418	11		
+98937	11	White Pass	Yakima
+98589	11	Tenino	Thurston
+99323	10	Burbank	Walla Walla
+98548	10	Hoodsport	Mason
+98831	10	Manson	Chelan
+98228	10		
+98844	10	Oroville	Okanogan
+99122	10	Davenport	Lincoln
+98568	9	Oakville	Grays Harbor
+98047	9	Pacific	King
+98394	9	Vaughn	Pierce
+98592	9	Union	Mason
+98570	9	Onalaska	Lewis
+98610	9	Carson	Skamania
+98944	9	Sunnyside	Yakima
+98857	9	Warden	Grant
+98635	9	Lyle	Klickitat
+98550	9	Hoquiam	Grays Harbor
+98281	9	Point Roberts	Whatcom
+98337	9	Bremerton	Kitsap
+98840	8	Okanogan	Okanogan
+98651	8	Underwood	Skamania
+98524	8	Allyn	Mason
+98240	8	Custer	Whatcom
+98850	8	Rock Island	Douglas
+99143	8	Lacrosse	Whitman
+99185	8	Wilbur	Lincoln
+98206	8		
+98563	8	Montesano	Grays Harbor
+99357	8	Royal City	Grant
+98640	8	Ocean Park	Pacific
+98433	8	Fort Lewis	Pierce
+98439	8	Lakewood Center	Pierce
+98339	7	Port Hadlock	Jefferson
+98951	7	Wapato	Yakima
+98325	7	Chimacum	Jefferson
+99130	7	Garfield	Whitman
+98843	7	Orondo	Douglas
+99148	7	Loon Lake	Stevens
+98279	7	Olga	San Juan
+98507	7		
+99402	7	Asotin	Asotin
+98244	7	Glacier	Whatcom
+99011	7	Fairchild Air Fo	Spokane
+99169	7	Ritzville	Adams
+98577	7	Raymond	Pacific
+99361	6	Waitsburg	Walla Walla
+99328	6	Dayton	Columbia
+99347	6	Pomeroy	Garfield
+98605	6	Cook	Klickitat
+98557	6	Mc Cleary	Grays Harbor
+98320	6	Brinnon	Jefferson
+98687	6		
+98645	6	Silverlake	Cowlitz
+98936	6	Moxee	Yakima
+98025	6	Hobart	King
+98009	6		
+98266	6		
+98243	6	Deer Harbor	San Juan
+98649	6	Toutle	Cowlitz
+98376	6	Quilcene	Jefferson
+99158	6	Oakesdale	Whitman
+98392	6	Suquamish	Kitsap
+98251	6	Gold Bar	Snohomish
+98340	6	Hansville	Kitsap
+98237	6	Concrete	Skagit
+98438	6		
+99360	6	Lowden	Walla Walla
+99001	6	Airway Heights	Spokane
+99133	5	Grand Coulee	Grant
+98624	5	Ilwaco	Pacific
+99139	5	Ione	Pend Oreille
+99159	5	Odessa	Lincoln
+98558	5		
+98828	5	Malaga	Chelan
+98295	5	Sumas	Whatcom
+98847	5	Peshastin	Chelan
+99171	5	Saint John	Whitman
+98851	5	Soap Lake	Grant
+98564	5	Mossyrock	Lewis
+99110	5	Clayton	Stevens
+99302	5		
+98947	5	Tieton	Yakima
+98858	4	Waterville	Douglas
+98280	4	Orcas	San Juan
+98331	4	Forks	Clallam
+99161	4	Palouse	Whitman
+98396	4	Wilkeson	Pierce
+98565	4	Napavine	Lewis
+98948	4	Toppenish	Yakima
+98262	4	Lummi Island	Whatcom
+98812	4	Brewster	Okanogan
+99101	4	Addy	Stevens
+98358	4	Nordland	Jefferson
+99029	4	Reardan	Lincoln
+99326	4	Connell	Franklin
+99138	4	Inchelium	Ferry
+98509	4		
+98935	4	Mabton	Yakima
+98351	4	Longbranch	Pierce
+98639	4	North Bonneville	Skamania
+98083	4		
+98932	4	Granger	Yakima
+99173	4	Springdale	Stevens
+98822	4	Entiat	Chelan
+98278	4		
+98304	3	Ashford	Pierce
+98595	3	Westport	Grays Harbor
+98353	3	Manchester	Kitsap
+98231	3		
+98538	3	Curtis	Lewis
+98050	3		
+98015	3		
+99343	3	Mesa	Franklin
+98291	3		
+98668	3		
+99167	3	Rice	Stevens
+98145	3		
+98342	3	Indianola	Kitsap
+98638	3	Naselle	Pacific
+98138	3		
+99335	3	Kahlotus	Franklin
+98603	3	Ariel	Cowlitz
+98124	3		
+99157	3	Northport	Stevens
+98073	3		
+98241	3	Darrington	Snohomish
+98227	3		
+99124	3	Elmer City	Okanogan
+98508	3		
+98586	3	South Bend	Pacific
+99126	3	Evans	Stevens
+99209	3		
+98377	3	Randle	Lewis
+98934	3	Kittitas	Kittitas
+98613	3	Centerville	Klickitat
+99330	3	Eltopia	Franklin
+99134	3	Harrington	Lincoln
+98511	3		
+98833	3	Mazama	Okanogan
+99123	3	Electric City	Grant
+98344	3		
+99346	3	Plymouth	Benton
+98356	3	Morton	Lewis
+98943	3	South Cle Elum	Kittitas
+98537	3	Cosmopolis	Grays Harbor
+99031	3	Spangle	Spokane
+98631	3	Long Beach	Pacific
+98385	3	South Prairie	Pierce
+98134	3	Seattle	King
+98357	3	Neah Bay	Clallam
+98542	3	Ethel	Lewis
+98286	2	Shaw Island	San Juan
+99341	2	Lind	Adams
+99170	2	Rosalia	Whitman
+98836	2	Monitor	Chelan
+98395	2		
+98417	2		
+99181	2	Valley	Stevens
+98814	2	Carlton	Okanogan
+99013	2	Ford	Stevens
+98238	2	Conway	Skagit
+98139	2		
+98127	2		
+99119	2	Cusick	Pend Oreille
+99348	2	Prescott	Walla Walla
+99135	2	Hartline	Grant
+98345	2	Keyport	Kitsap
+99329	2	Dixie	Walla Walla
+98846	2	Pateros	Okanogan
+98068	2	Snoqualmie Pass	Kittitas
+98807	2		
+98303	2	Anderson Island	Pierce
+98860	2	Wilson Creek	Grant
+98666	2		
+98644	2	Seaview	Pacific
+99008	2	Edwall	Lincoln
+98111	2		
+98276	2		
+98614	2	Chinook	Pacific
+98852	2	Stehekin	Chelan
+99128	2	Farmington	Whitman
+99125	2	Endicott	Whitman
+98267	2	Marblemount	Skagit
+99117	2	Creston	Lincoln
+99401	2	Anatone	Asotin
+99102	2	Albion	Whitman
+98315	2	Silverdale	Kitsap
+98933	2	Harrah	Yakima
+98617	2	Dallesport	Klickitat
+98590	2	Tokeland	Pacific
+98324	2		
+98623	2		
+98046	2		
+99179	2	Uniontown	Whitman
+99153	2	Metaline Falls	Pend Oreille
+99103	2	Almira	Lincoln
+99116	2	Coulee Dam	Okanogan
+99321	2	Beverly	Grant
+98496	2		
+99113	2	Colton	Whitman
+98547	2	Grayland	Grays Harbor
+99140	2	Keller	Ferry
+99115	1	Coulee City	Grant
+98064	1		
+98411	1		
+98582	1	Salkum	Lewis
+98829	1	Malott	Okanogan
+98849	1	Riverside	Okanogan
+99211	1		
+98141	1		
+98464	1		
+98946	1	Thorp	Kittitas
+99147	1		
+98621	1	Grays River	Wahkiakum
+98041	1		
+99012	1	Fairfield	Spokane
+98555	1	Lilliwaup	Mason
+98361	1	Packwood	Lewis
+98297	1	Waldron	San Juan
+98381	1	Sekiu	Clallam
+98384	1		
+99371	1	Washtucna	Adams
+98533	1	Cinebar	Lewis
+99322	1	Bickleton	Klickitat
+98941	1	Roslyn	Kittitas
+99023	1	Mica	Spokane
+99210	1		
+98952	1	White Swan	Yakima
+98670	1	Wahkiacus	Klickitat
+98355	1	Mineral	Lewis
+98556	1		
+98071	1		
+99033	1	Tekoa	Whitman
+98923	1	Cowiche	Yakima
+98287	1		
+98093	1		
+99121	1	Danville	Ferry
+98448	1		
+99129	1	Fruitland	Stevens
+98940	1	Ronald	Kittitas
+99032	1	Sprague	Lincoln
+98581	1	Ryderwood	Cowlitz
+98293	1		
+98401	1		
+98393	1		
+98259	1		
+98593	1	Vader	Lewis
+99150	1	Malo	Ferry
+99160	1	Orient	Ferry
+98817	1	Chelan Falls	Chelan
+98175	1		
+98811	1	Ardenvoir	Chelan
+98587	1	Taholah	Grays Harbor
+98222	1	Blakely Island	San Juan
+98619	1	Glenwood	Klickitat
+99176	1	Thornton	Whitman
+98114	1		
+98540	1		
+98830	1	Mansfield	Douglas
+98588	1	Tahuya	Mason
+98628	1	Klickitat	Klickitat
+99118	1	Curlew	Ferry
+98530	1	Bucoda	Thurston
+98256	1	Index	Snohomish
+98616	1	Cougar	Cowlitz
+98536	1	Copalis Crossing	Grays Harbor
+98904	1		
+99164	1		
+98827	1	Loomis	Okanogan
+98035	1		
+98220	1	Acme	Whatcom
+98195	1		
+98527	1	Bay Center	Pacific
+98431	1		
+99105	1	Benge	Adams
