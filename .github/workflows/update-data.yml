@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   update-data:
@@ -40,69 +41,94 @@ jobs:
 
       - name: Download FAA Airmen Database
         id: download
+        continue-on-error: true
         run: |
           echo "Downloading FAA Airmen Database..."
           
-          # FAA servers can be slow - use aggressive retry settings
-          MAX_ATTEMPTS=5
-          ATTEMPT=1
-          SUCCESS=false
+          # First, scrape the FAA page to get current download URLs
+          echo "Fetching current FAA download URLs..."
+          FAA_PAGE=$(curl -sL "https://www.faa.gov/licenses_certificates/airmen_certification/releasable_airmen_download")
           
-          while [[ $ATTEMPT -le $MAX_ATTEMPTS ]]; do
-            echo "Download attempt $ATTEMPT of $MAX_ATTEMPTS..."
+          # Extract the CSV database URL (CS = Comma Separated)
+          CSV_URL=$(echo "$FAA_PAGE" | grep -oP 'https://registry\.faa\.gov/database/CS[0-9]+\.zip' | head -1)
+          
+          # Fallback URLs
+          URLS=(
+            "$CSV_URL"
+            "https://registry.faa.gov/database/ReleasableAirmen.zip"
+          )
+          
+          # Remove empty entries
+          URLS=(${URLS[@]})
+          
+          echo "Will try these URLs:"
+          printf '  %s\n' "${URLS[@]}"
+          
+          # Try each URL with retries
+          SUCCESS=false
+          for URL in "${URLS[@]}"; do
+            [[ -z "$URL" ]] && continue
             
-            if curl -L -o airmen.zip \
-              --connect-timeout 120 \
-              --max-time 900 \
-              --retry 2 \
-              --retry-delay 30 \
-              --retry-all-errors \
-              -H "User-Agent: Mozilla/5.0 (compatible; WA-Pilots-Map/1.0)" \
-              "https://registry.faa.gov/database/ReleasableAirmen.zip"; then
+            echo ""
+            echo "Trying: $URL"
+            
+            for ATTEMPT in 1 2 3; do
+              echo "  Attempt $ATTEMPT of 3..."
               
-              # Verify we got a valid zip file
-              if unzip -t airmen.zip > /dev/null 2>&1; then
-                echo "Download successful and zip file valid"
-                SUCCESS=true
-                break
+              HTTP_CODE=$(curl -L -o airmen.zip -w "%{http_code}" \
+                --connect-timeout 120 \
+                --max-time 900 \
+                --retry 2 \
+                --retry-delay 30 \
+                -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+                -H "Accept: */*" \
+                "$URL" 2>/dev/null) || HTTP_CODE="000"
+              
+              echo "  HTTP response: $HTTP_CODE"
+              
+              if [[ "$HTTP_CODE" == "200" ]] && [[ -f airmen.zip ]] && [[ -s airmen.zip ]]; then
+                # Verify it's a valid zip
+                if unzip -t airmen.zip > /dev/null 2>&1; then
+                  echo "  Success! Valid zip file downloaded."
+                  SUCCESS=true
+                  break 2
+                else
+                  echo "  Downloaded file is not a valid zip"
+                  rm -f airmen.zip
+                fi
               else
-                echo "Downloaded file is not a valid zip, retrying..."
-                rm -f airmen.zip
+                rm -f airmen.zip 2>/dev/null
+                echo "  Failed (HTTP $HTTP_CODE)"
               fi
-            else
-              echo "curl failed with exit code $?"
-            fi
-            
-            ATTEMPT=$((ATTEMPT + 1))
-            if [[ $ATTEMPT -le $MAX_ATTEMPTS ]]; then
-              echo "Waiting 60 seconds before retry..."
-              sleep 60
-            fi
+              
+              [[ $ATTEMPT -lt 3 ]] && sleep 30
+            done
           done
           
-          if [[ "$SUCCESS" != "true" ]]; then
-            echo "::error::Failed to download FAA Airmen Database after $MAX_ATTEMPTS attempts"
-            echo "download_failed=true" >> $GITHUB_OUTPUT
-            exit 1
+          if [[ "$SUCCESS" == "true" ]]; then
+            echo ""
+            echo "Extracting PILOT_BASIC.csv..."
+            unzip -o -j airmen.zip PILOT_BASIC.csv -d .
+            
+            echo "File info:"
+            ls -lh PILOT_BASIC.csv
+            echo "Record count: $(wc -l < PILOT_BASIC.csv)"
+            echo "download_success=true" >> $GITHUB_OUTPUT
+          else
+            echo ""
+            echo "::warning::FAA download failed - server may be unavailable"
+            echo "download_success=false" >> $GITHUB_OUTPUT
           fi
-          
-          echo "Extracting PILOT_BASIC.csv..."
-          unzip -o -j airmen.zip PILOT_BASIC.csv -d .
-          
-          echo "File info:"
-          ls -lh PILOT_BASIC.csv
-          echo "Record count: $(wc -l < PILOT_BASIC.csv)"
-          echo "download_failed=false" >> $GITHUB_OUTPUT
 
       - name: Process pilot data
+        if: steps.download.outputs.download_success == 'true'
         run: |
           python3 scripts/process_pilots.py
 
       - name: Check for sectional chart updates
-        if: ${{ github.event.inputs.force_sectional == 'true' || github.event_name == 'schedule' }}
+        if: steps.download.outputs.download_success == 'true' && (github.event.inputs.force_sectional == 'true' || github.event_name == 'schedule')
         run: |
           echo "Checking VFR sectional chart..."
-          # Check if current chart is expired
           if [[ -f "data/sectional_metadata.json" ]]; then
             EXPIRY=$(python3 -c "import json; print(json.load(open('data/sectional_metadata.json')).get('expires', ''))")
             TODAY=$(date +%Y-%m-%d)
@@ -113,27 +139,26 @@ jobs:
               echo "Chart still valid until $EXPIRY"
             fi
           else
-            echo "No metadata found, downloading chart..."
-            ./scripts/update_sectional.sh
+            echo "No metadata found, skipping sectional update"
           fi
 
       - name: Update timestamp in index.html
+        if: steps.download.outputs.download_success == 'true'
         run: |
           CURRENT_MONTH=$(date '+%B %Y')
           sed -i "s/(.*[0-9]\{4\})/(${CURRENT_MONTH})/g" index.html || true
 
       - name: Commit and push changes
+        if: steps.download.outputs.download_success == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Check for changes
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
           
-          # Get pilot count for commit message
           PILOT_COUNT=$(python3 -c "import json; print(json.load(open('data/wa_pilots.json'))['summary']['total_pilots'])" 2>/dev/null || echo "unknown")
           
           git add -A
@@ -145,7 +170,7 @@ jobs:
           git push
 
       - name: Trigger pages deployment
-        if: success()
+        if: steps.download.outputs.download_success == 'true'
         run: |
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
@@ -153,12 +178,53 @@ jobs:
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy-pages.yml/dispatches" \
             -d '{"ref":"main"}' || echo "Could not trigger pages deployment"
 
-      - name: Upload logs
-        uses: actions/upload-artifact@v4
-        if: always()
+      - name: Create issue on FAA download failure
+        if: steps.download.outputs.download_success == 'false'
+        uses: actions/github-script@v7
         with:
-          name: update-logs-${{ github.run_id }}
-          path: |
-            *.log
-          retention-days: 30
-          if-no-files-found: ignore
+          script: |
+            const title = `FAA Data Update Failed - ${new Date().toISOString().split('T')[0]}`;
+            
+            // Check if similar issue already exists
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'faa-download-failure'
+            });
+            
+            if (issues.data.length > 0) {
+              // Add comment to existing issue
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues.data[0].number,
+                body: `Update attempt failed again on ${new Date().toISOString()}\n\nThe FAA server (registry.faa.gov) is still returning errors. Will retry next scheduled run.`
+              });
+              console.log(`Added comment to existing issue #${issues.data[0].number}`);
+            } else {
+              // Create new issue
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                labels: ['faa-download-failure'],
+                body: `## FAA Airmen Database Download Failed\n\nThe scheduled data update could not download from the FAA server.\n\n**Error:** FAA server (registry.faa.gov) returned 503 Service Unavailable or connection failed.\n\n**Impact:** Pilot data was not updated. The website continues to show the previous data.\n\n**Action:** This is typically a temporary FAA server issue. The workflow will retry automatically on the next scheduled run (Sundays at 6 AM UTC).\n\nIf this persists for multiple weeks, the FAA may have changed their download process.\n\n---\n*This issue was automatically created by the update-data workflow.*`
+              });
+              console.log('Created new issue for FAA download failure');
+            }
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ steps.download.outputs.download_success }}" == "true" ]]; then
+            echo "✅ FAA data downloaded and processed successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ FAA download failed - server unavailable" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The FAA registry server (registry.faa.gov) is currently returning errors." >> $GITHUB_STEP_SUMMARY
+            echo "This is a known intermittent issue with FAA's servers." >> $GITHUB_STEP_SUMMARY
+            echo "The workflow will retry on the next scheduled run." >> $GITHUB_STEP_SUMMARY
+          fi
