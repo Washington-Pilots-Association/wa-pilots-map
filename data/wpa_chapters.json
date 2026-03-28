@@ -5,9 +5,12 @@
       "type": "Feature",
       "properties": {
         "name": "Anacortes",
+        "region": "Westside",
         "airport": "74S (Anacortes)",
         "meeting": "2nd Thursday every 3rd month, Micro Aerodynamics hangar",
-        "contact": "April & Adam Jones"
+        "contact": "Adam Jones",
+        "contact_title": "President",
+        "contact_email": "thesteelerector@msn.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.6622, 48.4988] }
     },
@@ -15,9 +18,12 @@
       "type": "Feature",
       "properties": {
         "name": "Arlington",
+        "region": "Westside",
         "airport": "KAWO (Arlington)",
         "meeting": "1st Wednesday each month, Neal Carman's hangar",
-        "contact": "W. Neal Karman"
+        "contact": "Neal Karman",
+        "contact_title": "President",
+        "contact_email": "wnkarman@gmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.1598, 48.1607] }
     },
@@ -25,30 +31,25 @@
       "type": "Feature",
       "properties": {
         "name": "Bremerton",
+        "region": "Westside",
         "airport": "KPWT (Bremerton)",
         "meeting": "Check wpaflys.org for details",
-        "contact": "George Steed"
+        "contact": "George Steed",
+        "contact_title": "President",
+        "contact_email": "george.steed@gmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.7649, 47.4903] }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Chehalis",
-        "airport": "KCLS (Chehalis-Centralia)",
-        "meeting": "Contact for info",
-        "contact": "Contact WPA State",
-        "inactive": true
-      },
-      "geometry": { "type": "Point", "coordinates": [-122.9831, 46.6770] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Clallam County",
+        "region": "Westside",
         "airport": "KCLM (Port Angeles)",
         "meeting": "Periodic lunch meetings",
-        "contact": "David Miller"
+        "contact": "David Miller",
+        "contact_title": "President",
+        "contact_email": "retinpa@olypen.com"
       },
       "geometry": { "type": "Point", "coordinates": [-123.4997, 48.1202] }
     },
@@ -56,9 +57,12 @@
       "type": "Feature",
       "properties": {
         "name": "Colville Valley",
+        "region": "Eastside",
         "airport": "Colville Airport (63S)",
         "meeting": "Contact for schedule",
-        "contact": "Dave Garringer"
+        "contact": "Dave Garringer",
+        "contact_title": "President",
+        "contact_email": "colvilleairport@yahoo.com"
       },
       "geometry": { "type": "Point", "coordinates": [-117.8844, 48.5416] }
     },
@@ -66,9 +70,12 @@
       "type": "Feature",
       "properties": {
         "name": "Deer Park",
+        "region": "Eastside",
         "airport": "KDEW (Deer Park)",
         "meeting": "As needed at admin building",
-        "contact": "Darold Schultz"
+        "contact": "Darold Schultz & Hank Moore",
+        "contact_title": "Co-Presidents",
+        "contact_email": "daroldschultz@hotmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-117.4267, 47.9669] }
     },
@@ -76,10 +83,12 @@
       "type": "Feature",
       "properties": {
         "name": "Ellensburg",
+        "region": "Eastside",
         "airport": "KELN (Bowers Field)",
         "meeting": "Contact for info",
-        "contact": "Contact WPA State",
-        "inactive": true
+        "contact": "Terry LaRue",
+        "contact_title": "President",
+        "contact_email": "larue@gemsi.com"
       },
       "geometry": { "type": "Point", "coordinates": [-120.5307, 47.0330] }
     },
@@ -87,9 +96,12 @@
       "type": "Feature",
       "properties": {
         "name": "Greater Seattle",
+        "region": "Westside",
         "airport": "KBFI (Boeing Field)",
         "meeting": "Contact for info",
-        "contact": "Robert Wiff"
+        "contact": "Bob Wiff",
+        "contact_title": "President",
+        "contact_email": "prezseattlepilots@gmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.3019, 47.5300] }
     },
@@ -97,19 +109,25 @@
       "type": "Feature",
       "properties": {
         "name": "Green River",
+        "region": "Westside",
         "airport": "KRNT/KTIW area",
         "meeting": "2nd Friday of even months",
-        "contact": "Terri Tederman"
+        "contact": "Terri Tederman",
+        "contact_title": "President",
+        "contact_email": "danz4@msn.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.2159, 47.4931] }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Harvey Field/Snohomish",
+        "name": "Harvey Field",
+        "region": "Westside",
         "airport": "S43 (Harvey Field)",
         "meeting": "2nd Saturday each month (except July), Hangar 15",
-        "contact": "David Divoky"
+        "contact": "Dave Divoky",
+        "contact_title": "President",
+        "contact_email": "dgdivoky@gmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.1051, 47.9039] }
     },
@@ -117,9 +135,12 @@
       "type": "Feature",
       "properties": {
         "name": "Methow Valley",
+        "region": "Eastside",
         "airport": "Twisp Airport (1S2)",
         "meeting": "2nd Wednesday monthly (Sept-Apr), Fitzpatrick hangar",
-        "contact": "Richard LeDuc"
+        "contact": "Rick LeDuc",
+        "contact_title": "President",
+        "contact_email": "rickleduc55@gmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-120.0758, 48.3647] }
     },
@@ -127,9 +148,12 @@
       "type": "Feature",
       "properties": {
         "name": "Moses Lake",
+        "region": "Eastside",
         "airport": "KMWH (Moses Lake)",
         "meeting": "Monthly meetings",
         "contact": "Contact WPA State",
+        "contact_title": "President",
+        "contact_email": "",
         "inactive": true
       },
       "geometry": { "type": "Point", "coordinates": [-119.3200, 47.2077] }
@@ -137,20 +161,26 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "North Sound/Bellingham",
+        "name": "North Sound",
+        "region": "Westside",
         "airport": "KBLI (Bellingham)",
         "meeting": "2nd Thursday monthly (except Jun-Aug), ARFF Conference Center",
-        "contact": "Elizabeth Gibbs"
+        "contact": "Elizabeth Gibbs",
+        "contact_title": "President",
+        "contact_email": "elizabeth@sixpackaero.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.5375, 48.7928] }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Okanogan & Ferry County",
+        "name": "Okanogan Ferry Co",
+        "region": "Eastside",
         "airport": "KOMK (Omak)",
         "meeting": "4th Tuesday monthly, Omak Elks Lodge",
-        "contact": "Mark Christoph"
+        "contact": "Mark Christoph",
+        "contact_title": "President",
+        "contact_email": "mrchristoph@live.com"
       },
       "geometry": { "type": "Point", "coordinates": [-119.5178, 48.4644] }
     },
@@ -158,9 +188,12 @@
       "type": "Feature",
       "properties": {
         "name": "Olympia",
+        "region": "Westside",
         "airport": "KOLM (Olympia Regional)",
         "meeting": "Contact for info",
-        "contact": "John Garrett"
+        "contact": "John Garrett",
+        "contact_title": "Chapter Rep to State",
+        "contact_email": "jgarrett@fidalgo.net"
       },
       "geometry": { "type": "Point", "coordinates": [-122.7675, 46.9694] }
     },
@@ -168,9 +201,12 @@
       "type": "Feature",
       "properties": {
         "name": "Paine Field",
+        "region": "Westside",
         "airport": "KPAE (Paine Field)",
         "meeting": "1st Thursday most months",
-        "contact": "Sandy Allen"
+        "contact": "Sandy Allen",
+        "contact_title": "President",
+        "contact_email": "sandyallen@att.net"
       },
       "geometry": { "type": "Point", "coordinates": [-122.2816, 47.9063] }
     },
@@ -178,19 +214,25 @@
       "type": "Feature",
       "properties": {
         "name": "San Juan Islands",
+        "region": "Westside",
         "airport": "KFHR (Friday Harbor)",
         "meeting": "Contact for info",
-        "contact": "Tom DiGiorgio"
+        "contact": "Tom DiGiorgio",
+        "contact_title": "Chapter Rep to State",
+        "contact_email": "tom.digiorgio@gmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-123.0243, 48.5220] }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Shelton-Sanderson",
+        "name": "Shelton",
+        "region": "Westside",
         "airport": "KSHN (Sanderson Field)",
         "meeting": "Saturday 10 AM in pilot lounge",
-        "contact": "James Murphy"
+        "contact": "James Murphy",
+        "contact_title": "President",
+        "contact_email": "murph61@juno.com"
       },
       "geometry": { "type": "Point", "coordinates": [-123.1476, 47.2336] }
     },
@@ -198,19 +240,25 @@
       "type": "Feature",
       "properties": {
         "name": "Skagit",
+        "region": "Westside",
         "airport": "KBVS (Skagit Regional)",
         "meeting": "Last Tuesday monthly, 6 PM at Cascade Aviation",
-        "contact": "Jerome Higgins"
+        "contact": "Jerry Higgins",
+        "contact_title": "President",
+        "contact_email": "jet68@comcast.net"
       },
       "geometry": { "type": "Point", "coordinates": [-122.4207, 48.4708] }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Southwest/Vancouver",
+        "name": "Southwest",
+        "region": "Westside",
         "airport": "KVUO (Pearson Field)",
         "meeting": "Contact for info",
-        "contact": "Fellipe Alves"
+        "contact": "Fellipe Alves",
+        "contact_title": "President",
+        "contact_email": "alves.ffa@gmail.com"
       },
       "geometry": { "type": "Point", "coordinates": [-122.6564, 45.6205] }
     },
@@ -218,30 +266,25 @@
       "type": "Feature",
       "properties": {
         "name": "Spokane",
+        "region": "Eastside",
         "airport": "KGEG/KSFF area",
         "meeting": "3rd Wednesday monthly, 6 PM at Darcy's",
-        "contact": "Andy Luebke"
+        "contact": "Andrew Luebke",
+        "contact_title": "President",
+        "contact_email": "awluebke@live.com"
       },
       "geometry": { "type": "Point", "coordinates": [-117.5339, 47.6828] }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Tacoma",
-        "airport": "KTIW (Tacoma Narrows)",
-        "meeting": "Contact for info",
-        "contact": "Contact WPA State",
-        "inactive": true
-      },
-      "geometry": { "type": "Point", "coordinates": [-122.5778, 47.2679] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Tri-Cities",
+        "region": "Eastside",
         "airport": "KPSC/KRLD area",
         "meeting": "Contact for info",
         "contact": "Contact WPA State",
+        "contact_title": "President",
+        "contact_email": "",
         "inactive": true
       },
       "geometry": { "type": "Point", "coordinates": [-119.1190, 46.2647] }
@@ -250,9 +293,12 @@
       "type": "Feature",
       "properties": {
         "name": "Twin Harbors",
+        "region": "Westside",
         "airport": "KHQM (Hoquiam)",
         "meeting": "Looking to be rejuvenated",
         "contact": "Contact WPA State",
+        "contact_title": "President",
+        "contact_email": "",
         "inactive": true
       },
       "geometry": { "type": "Point", "coordinates": [-123.9367, 46.9712] }
@@ -260,21 +306,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Walla Walla",
-        "airport": "KALW (Walla Walla Regional)",
-        "meeting": "Contact for info",
-        "contact": "Contact WPA State",
-        "inactive": true
-      },
-      "geometry": { "type": "Point", "coordinates": [-118.2881, 46.0949] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Wenatchee",
+        "region": "Eastside",
         "airport": "KEAT (Pangborn)",
         "meeting": "3rd Tuesday monthly, 6 PM",
-        "contact": "Klaus Marx"
+        "contact": "Klaus Marx",
+        "contact_title": "President",
+        "contact_email": "klausmarx@juno.com"
       },
       "geometry": { "type": "Point", "coordinates": [-120.2070, 47.3989] }
     },
@@ -282,9 +320,12 @@
       "type": "Feature",
       "properties": {
         "name": "Yakima Valley",
+        "region": "Eastside",
         "airport": "KYKM (McAllister Field)",
         "meeting": "4th Thursday monthly; Sat 8:30 AM coffee at Airpark",
-        "contact": "Gary Klingele"
+        "contact": "Gary Klingele",
+        "contact_title": "President",
+        "contact_email": "gcklingele@nwi.net"
       },
       "geometry": { "type": "Point", "coordinates": [-120.5440, 46.5682] }
     }

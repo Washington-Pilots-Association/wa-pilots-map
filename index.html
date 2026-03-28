@@ -213,6 +213,33 @@
             font-size: 11px;
             color: #777;
         }
+        .chapter-popup .email {
+            font-size: 11px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .chapter-popup .email a {
+            color: var(--wpa-teal);
+            text-decoration: none;
+        }
+        .chapter-popup .email a:hover {
+            text-decoration: underline;
+        }
+        .chapter-popup .region-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        .chapter-popup .region-badge.westside {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+        .chapter-popup .region-badge.eastside {
+            background: #fff3e0;
+            color: #e65100;
+        }
         .chapter-popup .inactive-badge {
             display: inline-block;
             background: #f59e0b;
@@ -523,12 +550,16 @@
                 onEachFeature: function(feature, layer) {
                     const p = feature.properties;
                     const inactiveBadge = p.inactive ? '<span class="inactive-badge">Seeking Members</span>' : '';
+                    const regionBadge = p.region ? `<span class="region-badge ${p.region.toLowerCase()}">${p.region}</span>` : '';
+                    const emailLink = p.contact_email ? `<a href="mailto:${p.contact_email}">${p.contact_email}</a>` : '';
+                    const contactInfo = p.contact_title ? `${p.contact} (${p.contact_title})` : p.contact;
                     layer.bindPopup(`
                         <div class="chapter-popup">
-                            <h3>✈️ ${p.name} Chapter</h3>
+                            <h3>✈️ ${p.name} Chapter ${regionBadge}</h3>
                             <div class="airport">${p.airport}</div>
                             <div class="meeting">📅 ${p.meeting}</div>
-                            <div class="contact">📧 ${p.contact}</div>
+                            <div class="contact">👤 ${contactInfo}</div>
+                            ${emailLink ? `<div class="email">📧 ${emailLink}</div>` : ''}
                             ${inactiveBadge}
                         </div>
                     `);
@@ -537,7 +568,7 @@
 
             // Add layer control with chapters overlay
             const overlayMaps = {
-                "🔴 WPA Chapters (21)": chaptersLayer
+                "🔴 WPA Chapters (25)": chaptersLayer
             };
             
             L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(map);
