@@ -2,31 +2,31 @@
   "pilots": [
     {
       "zip": "98335",
-      "count": 269,
+      "count": 267,
       "city": "Gig Harbor",
       "county": "Pierce"
     },
     {
       "zip": "98607",
-      "count": 246,
+      "count": 245,
       "city": "Camas",
       "county": "Clark"
     },
     {
       "zip": "98391",
-      "count": 225,
+      "count": 221,
       "city": "",
       "county": ""
     },
     {
       "zip": "98221",
-      "count": 202,
+      "count": 201,
       "city": "Anacortes",
       "county": "Skagit"
     },
     {
       "zip": "98277",
-      "count": 196,
+      "count": 197,
       "city": "Oak Harbor",
       "county": "Island"
     },
@@ -38,13 +38,13 @@
     },
     {
       "zip": "98042",
-      "count": 161,
+      "count": 158,
       "city": "Kent",
       "county": "King"
     },
     {
       "zip": "98604",
-      "count": 152,
+      "count": 153,
       "city": "Battle Ground",
       "county": "Clark"
     },
@@ -62,57 +62,51 @@
     },
     {
       "zip": "98103",
-      "count": 140,
+      "count": 139,
       "city": "Seattle",
       "county": "King"
     },
     {
-      "zip": "98682",
+      "zip": "98092",
       "count": 137,
+      "city": "Zcta 98092",
+      "county": "King"
+    },
+    {
+      "zip": "98258",
+      "count": 137,
+      "city": "Lake Stevens",
+      "county": "Snohomish"
+    },
+    {
+      "zip": "98225",
+      "count": 137,
+      "city": "Bellingham",
+      "county": "Whatcom"
+    },
+    {
+      "zip": "98671",
+      "count": 136,
+      "city": "Washougal",
+      "county": "Clark"
+    },
+    {
+      "zip": "98682",
+      "count": 136,
       "city": "Vancouver",
       "county": "Clark"
     },
     {
       "zip": "98116",
-      "count": 137,
+      "count": 135,
       "city": "Seattle",
       "county": "King"
     },
     {
       "zip": "98052",
-      "count": 135,
+      "count": 134,
       "city": "Redmond",
       "county": "King"
-    },
-    {
-      "zip": "98671",
-      "count": 135,
-      "city": "Washougal",
-      "county": "Clark"
-    },
-    {
-      "zip": "98225",
-      "count": 135,
-      "city": "Bellingham",
-      "county": "Whatcom"
-    },
-    {
-      "zip": "98258",
-      "count": 134,
-      "city": "Lake Stevens",
-      "county": "Snohomish"
-    },
-    {
-      "zip": "98092",
-      "count": 133,
-      "city": "Zcta 98092",
-      "county": "King"
-    },
-    {
-      "zip": "98382",
-      "count": 133,
-      "city": "Sequim",
-      "county": "Clallam"
     },
     {
       "zip": "98226",
@@ -121,8 +115,14 @@
       "county": "Whatcom"
     },
     {
+      "zip": "98382",
+      "count": 132,
+      "city": "Sequim",
+      "county": "Clallam"
+    },
+    {
       "zip": "99208",
-      "count": 131,
+      "count": 130,
       "city": "Spokane",
       "county": "Spokane"
     },
@@ -134,21 +134,21 @@
     },
     {
       "zip": "98290",
-      "count": 128,
+      "count": 129,
       "city": "Snohomish",
       "county": "Snohomish"
     },
     {
-      "zip": "98110",
-      "count": 126,
-      "city": "Bainbridge Islan",
-      "county": "Kitsap"
-    },
-    {
       "zip": "98115",
-      "count": 125,
+      "count": 127,
       "city": "Seattle",
       "county": "King"
+    },
+    {
+      "zip": "98110",
+      "count": 125,
+      "city": "Bainbridge Islan",
+      "county": "Kitsap"
     },
     {
       "zip": "98027",
@@ -163,22 +163,28 @@
       "county": "King"
     },
     {
+      "zip": "98374",
+      "count": 120,
+      "city": "Puyallup",
+      "county": "Pierce"
+    },
+    {
+      "zip": "98926",
+      "count": 120,
+      "city": "Ellensburg",
+      "county": "Kittitas"
+    },
+    {
       "zip": "98501",
       "count": 119,
       "city": "Olympia",
       "county": "Thurston"
     },
     {
-      "zip": "98374",
-      "count": 119,
-      "city": "Puyallup",
-      "county": "Pierce"
-    },
-    {
-      "zip": "98926",
-      "count": 118,
-      "city": "Ellensburg",
-      "county": "Kittitas"
+      "zip": "98006",
+      "count": 117,
+      "city": "Bellevue",
+      "county": "King"
     },
     {
       "zip": "98229",
@@ -187,14 +193,8 @@
       "county": ""
     },
     {
-      "zip": "98006",
-      "count": 116,
-      "city": "Bellevue",
-      "county": "King"
-    },
-    {
       "zip": "98801",
-      "count": 115,
+      "count": 116,
       "city": "Wenatchee",
       "county": "Chelan"
     },
@@ -206,69 +206,75 @@
     },
     {
       "zip": "98033",
-      "count": 113,
+      "count": 112,
       "city": "Kirkland",
       "county": "King"
     },
     {
       "zip": "99224",
-      "count": 111,
+      "count": 112,
       "city": "Spokane",
       "county": "Spokane"
     },
     {
-      "zip": "99301",
-      "count": 111,
-      "city": "Pasco",
-      "county": "Franklin"
-    },
-    {
       "zip": "99362",
-      "count": 108,
+      "count": 111,
       "city": "Walla Walla",
       "county": "Walla Walla"
     },
     {
+      "zip": "99301",
+      "count": 110,
+      "city": "Pasco",
+      "county": "Franklin"
+    },
+    {
       "zip": "98034",
-      "count": 106,
+      "count": 109,
       "city": "Kirkland",
       "county": "King"
     },
     {
-      "zip": "98059",
-      "count": 105,
-      "city": "Renton",
-      "county": "King"
-    },
-    {
       "zip": "98642",
-      "count": 104,
+      "count": 106,
       "city": "Ridgefield",
       "county": "Clark"
     },
     {
+      "zip": "98059",
+      "count": 104,
+      "city": "Renton",
+      "county": "King"
+    },
+    {
       "zip": "98208",
-      "count": 102,
+      "count": 104,
       "city": "Everett",
       "county": "Snohomish"
     },
     {
       "zip": "98004",
-      "count": 101,
+      "count": 100,
       "city": "Beaux Arts",
       "county": "King"
     },
     {
-      "zip": "98250",
-      "count": 99,
-      "city": "Friday Harbor",
-      "county": "San Juan"
-    },
-    {
       "zip": "99163",
-      "count": 99,
+      "count": 100,
       "city": "Pullman",
       "county": "Whitman"
+    },
+    {
+      "zip": "99223",
+      "count": 99,
+      "city": "Spokane",
+      "county": "Spokane"
+    },
+    {
+      "zip": "98275",
+      "count": 99,
+      "city": "Mukilteo",
+      "county": "Snohomish"
     },
     {
       "zip": "98908",
@@ -277,40 +283,40 @@
       "county": "Yakima"
     },
     {
-      "zip": "98166",
+      "zip": "98250",
       "count": 98,
+      "city": "Friday Harbor",
+      "county": "San Juan"
+    },
+    {
+      "zip": "98166",
+      "count": 95,
       "city": "Normandy Park",
       "county": "King"
     },
     {
-      "zip": "98275",
-      "count": 97,
-      "city": "Mukilteo",
-      "county": "Snohomish"
-    },
-    {
-      "zip": "99223",
-      "count": 96,
-      "city": "Spokane",
-      "county": "Spokane"
-    },
-    {
-      "zip": "98338",
-      "count": 93,
-      "city": "Graham",
-      "county": "Pierce"
-    },
-    {
       "zip": "98513",
-      "count": 92,
+      "count": 93,
       "city": "Lacey",
       "county": "Thurston"
     },
     {
-      "zip": "98040",
+      "zip": "98661",
+      "count": 93,
+      "city": "Vancouver",
+      "county": "Clark"
+    },
+    {
+      "zip": "98338",
       "count": 92,
-      "city": "Mercer Island",
-      "county": "King"
+      "city": "Graham",
+      "county": "Pierce"
+    },
+    {
+      "zip": "98684",
+      "count": 92,
+      "city": "Cascade Park",
+      "county": "Clark"
     },
     {
       "zip": "98296",
@@ -319,22 +325,16 @@
       "county": "Snohomish"
     },
     {
-      "zip": "98109",
+      "zip": "98040",
       "count": 91,
-      "city": "Seattle",
+      "city": "Mercer Island",
       "county": "King"
     },
     {
-      "zip": "98684",
-      "count": 91,
-      "city": "Cascade Park",
-      "county": "Clark"
-    },
-    {
-      "zip": "98661",
+      "zip": "98109",
       "count": 90,
-      "city": "Vancouver",
-      "county": "Clark"
+      "city": "Seattle",
+      "county": "King"
     },
     {
       "zip": "98367",
@@ -343,16 +343,16 @@
       "county": "Kitsap"
     },
     {
+      "zip": "98117",
+      "count": 88,
+      "city": "Seattle",
+      "county": "King"
+    },
+    {
       "zip": "98685",
       "count": 88,
       "city": "Felida",
       "county": "Clark"
-    },
-    {
-      "zip": "98512",
-      "count": 88,
-      "city": "Olympia",
-      "county": "Thurston"
     },
     {
       "zip": "98023",
@@ -361,28 +361,28 @@
       "county": "King"
     },
     {
-      "zip": "98117",
+      "zip": "98512",
       "count": 87,
-      "city": "Seattle",
-      "county": "King"
+      "city": "Olympia",
+      "county": "Thurston"
     },
     {
       "zip": "98026",
-      "count": 87,
+      "count": 86,
       "city": "Edmonds",
       "county": "Snohomish"
     },
     {
-      "zip": "98370",
-      "count": 87,
-      "city": "Poulsbo",
-      "county": "Kitsap"
-    },
-    {
       "zip": "98022",
-      "count": 86,
+      "count": 85,
       "city": "Enumclaw",
       "county": "King"
+    },
+    {
+      "zip": "98370",
+      "count": 85,
+      "city": "Poulsbo",
+      "county": "Kitsap"
     },
     {
       "zip": "98321",
@@ -391,27 +391,27 @@
       "county": "Pierce"
     },
     {
+      "zip": "98125",
+      "count": 84,
+      "city": "Seattle",
+      "county": "King"
+    },
+    {
       "zip": "98516",
       "count": 84,
       "city": "Lacey",
       "county": "Thurston"
     },
     {
-      "zip": "98125",
-      "count": 83,
+      "zip": "98118",
+      "count": 81,
       "city": "Seattle",
       "county": "King"
     },
     {
-      "zip": "99206",
-      "count": 82,
-      "city": "Spokane",
-      "county": "Spokane"
-    },
-    {
-      "zip": "98118",
-      "count": 80,
-      "city": "Seattle",
+      "zip": "98072",
+      "count": 81,
+      "city": "Woodinville",
       "county": "King"
     },
     {
@@ -421,16 +421,16 @@
       "county": "Benton"
     },
     {
-      "zip": "98072",
-      "count": 80,
-      "city": "Woodinville",
-      "county": "King"
-    },
-    {
       "zip": "98122",
       "count": 80,
       "city": "Seattle",
       "county": "King"
+    },
+    {
+      "zip": "99206",
+      "count": 79,
+      "city": "Spokane",
+      "county": "Spokane"
     },
     {
       "zip": "98387",
@@ -440,38 +440,26 @@
     },
     {
       "zip": "98203",
-      "count": 77,
+      "count": 78,
       "city": "Everett",
       "county": "Snohomish"
     },
     {
       "zip": "98292",
-      "count": 77,
+      "count": 76,
       "city": "Stanwood",
       "county": "Snohomish"
     },
     {
       "zip": "98407",
-      "count": 77,
+      "count": 76,
       "city": "Tacoma",
       "county": "Pierce"
     },
     {
       "zip": "98105",
-      "count": 76,
-      "city": "Seattle",
-      "county": "King"
-    },
-    {
-      "zip": "98502",
-      "count": 76,
-      "city": "Olympia",
-      "county": "Thurston"
-    },
-    {
-      "zip": "98056",
       "count": 74,
-      "city": "Renton",
+      "city": "Seattle",
       "county": "King"
     },
     {
@@ -479,6 +467,12 @@
       "count": 74,
       "city": "Fircrest",
       "county": "Pierce"
+    },
+    {
+      "zip": "98502",
+      "count": 74,
+      "city": "Olympia",
+      "county": "Thurston"
     },
     {
       "zip": "98102",
@@ -493,40 +487,46 @@
       "county": ""
     },
     {
+      "zip": "98584",
+      "count": 73,
+      "city": "Shelton",
+      "county": "Mason"
+    },
+    {
       "zip": "98802",
       "count": 73,
       "city": "East Wenatchee",
       "county": "Douglas"
     },
     {
-      "zip": "98422",
-      "count": 73,
-      "city": "Tacoma",
-      "county": "Pierce"
-    },
-    {
-      "zip": "98584",
-      "count": 72,
-      "city": "Shelton",
-      "county": "Mason"
-    },
-    {
-      "zip": "98375",
-      "count": 72,
-      "city": "Zcta 98375",
-      "county": "Pierce"
-    },
-    {
       "zip": "98107",
-      "count": 72,
+      "count": 73,
       "city": "Seattle",
       "county": "King"
     },
     {
-      "zip": "99203",
+      "zip": "98056",
+      "count": 72,
+      "city": "Renton",
+      "county": "King"
+    },
+    {
+      "zip": "98422",
+      "count": 72,
+      "city": "Tacoma",
+      "county": "Pierce"
+    },
+    {
+      "zip": "98375",
       "count": 71,
-      "city": "Spokane",
-      "county": "Spokane"
+      "city": "Zcta 98375",
+      "county": "Pierce"
+    },
+    {
+      "zip": "98075",
+      "count": 71,
+      "city": "",
+      "county": ""
     },
     {
       "zip": "98155",
@@ -535,16 +535,16 @@
       "county": "King"
     },
     {
-      "zip": "98011",
-      "count": 71,
-      "city": "Bothell",
-      "county": "King"
+      "zip": "99203",
+      "count": 70,
+      "city": "Spokane",
+      "county": "Spokane"
     },
     {
-      "zip": "98075",
+      "zip": "98011",
       "count": 70,
-      "city": "",
-      "county": ""
+      "city": "Bothell",
+      "county": "King"
     },
     {
       "zip": "98664",
@@ -553,16 +553,16 @@
       "county": "Clark"
     },
     {
-      "zip": "98121",
+      "zip": "98683",
       "count": 69,
-      "city": "Seattle",
-      "county": "King"
+      "city": "Zcta 98683",
+      "county": "Clark"
     },
     {
-      "zip": "98270",
+      "zip": "98121",
       "count": 68,
-      "city": "Marysville",
-      "county": "Snohomish"
+      "city": "Seattle",
+      "county": "King"
     },
     {
       "zip": "98606",
@@ -571,28 +571,34 @@
       "county": "Clark"
     },
     {
-      "zip": "98683",
+      "zip": "98672",
       "count": 67,
-      "city": "Zcta 98683",
-      "county": "Clark"
+      "city": "White Salmon",
+      "county": "Klickitat"
+    },
+    {
+      "zip": "98270",
+      "count": 67,
+      "city": "Marysville",
+      "county": "Snohomish"
     },
     {
       "zip": "98020",
-      "count": 67,
+      "count": 66,
       "city": "Woodway",
       "county": "Snohomish"
     },
     {
       "zip": "98036",
-      "count": 67,
+      "count": 66,
       "city": "Brier",
       "county": "Snohomish"
     },
     {
-      "zip": "98672",
+      "zip": "98126",
       "count": 66,
-      "city": "White Salmon",
-      "county": "Klickitat"
+      "city": "Seattle",
+      "county": "King"
     },
     {
       "zip": "98029",
@@ -601,16 +607,16 @@
       "county": "King"
     },
     {
-      "zip": "99403",
-      "count": 65,
-      "city": "Clarkston",
-      "county": "Asotin"
-    },
-    {
       "zip": "98597",
-      "count": 64,
+      "count": 65,
       "city": "Yelm",
       "county": "Thurston"
+    },
+    {
+      "zip": "99403",
+      "count": 64,
+      "city": "Clarkston",
+      "county": "Asotin"
     },
     {
       "zip": "98248",
@@ -619,22 +625,22 @@
       "county": "Whatcom"
     },
     {
-      "zip": "98366",
-      "count": 64,
-      "city": "South Park Villa",
-      "county": "Kitsap"
-    },
-    {
-      "zip": "98126",
-      "count": 64,
-      "city": "Seattle",
-      "county": "King"
+      "zip": "98273",
+      "count": 63,
+      "city": "Mount Vernon",
+      "county": "Skagit"
     },
     {
       "zip": "98372",
       "count": 63,
       "city": "Puyallup",
       "county": "Pierce"
+    },
+    {
+      "zip": "98366",
+      "count": 63,
+      "city": "South Park Villa",
+      "county": "Kitsap"
     },
     {
       "zip": "98144",
@@ -655,10 +661,16 @@
       "county": "Spokane"
     },
     {
-      "zip": "98273",
+      "zip": "98264",
       "count": 62,
-      "city": "Mount Vernon",
-      "county": "Skagit"
+      "city": "Lynden",
+      "county": "Whatcom"
+    },
+    {
+      "zip": "98686",
+      "count": 61,
+      "city": "Vancouver",
+      "county": "Clark"
     },
     {
       "zip": "98498",
@@ -673,40 +685,22 @@
       "county": "King"
     },
     {
-      "zip": "98198",
-      "count": 61,
-      "city": "Des Moines",
-      "county": "King"
-    },
-    {
-      "zip": "98264",
-      "count": 61,
-      "city": "Lynden",
-      "county": "Whatcom"
-    },
-    {
       "zip": "98532",
       "count": 61,
       "city": "Chehalis",
       "county": "Lewis"
     },
     {
-      "zip": "98686",
+      "zip": "98005",
       "count": 60,
-      "city": "Vancouver",
-      "county": "Clark"
-    },
-    {
-      "zip": "99019",
-      "count": 59,
-      "city": "Liberty Lake",
-      "county": "Spokane"
-    },
-    {
-      "zip": "98199",
-      "count": 59,
-      "city": "Seattle",
+      "city": "Bellevue",
       "county": "King"
+    },
+    {
+      "zip": "98272",
+      "count": 60,
+      "city": "Monroe",
+      "county": "Snohomish"
     },
     {
       "zip": "98662",
@@ -715,22 +709,22 @@
       "county": "Clark"
     },
     {
-      "zip": "98005",
+      "zip": "98198",
       "count": 59,
-      "city": "Bellevue",
+      "city": "Des Moines",
       "county": "King"
-    },
-    {
-      "zip": "98272",
-      "count": 59,
-      "city": "Monroe",
-      "county": "Snohomish"
     },
     {
       "zip": "98201",
       "count": 58,
       "city": "Everett",
       "county": "Snohomish"
+    },
+    {
+      "zip": "98199",
+      "count": 58,
+      "city": "Seattle",
+      "county": "King"
     },
     {
       "zip": "98021",
@@ -745,6 +739,12 @@
       "county": "King"
     },
     {
+      "zip": "99019",
+      "count": 57,
+      "city": "Liberty Lake",
+      "county": "Spokane"
+    },
+    {
       "zip": "98333",
       "count": 56,
       "city": "Fox Island",
@@ -757,28 +757,10 @@
       "county": "King"
     },
     {
-      "zip": "98001",
-      "count": 54,
-      "city": "Algona",
-      "county": "King"
-    },
-    {
-      "zip": "98031",
-      "count": 54,
-      "city": "Kent",
-      "county": "King"
-    },
-    {
       "zip": "98383",
-      "count": 54,
+      "count": 55,
       "city": "Silverdale",
       "county": "Kitsap"
-    },
-    {
-      "zip": "98028",
-      "count": 54,
-      "city": "Kenmore",
-      "county": "King"
     },
     {
       "zip": "98503",
@@ -787,10 +769,16 @@
       "county": "Thurston"
     },
     {
-      "zip": "98368",
+      "zip": "98001",
       "count": 53,
-      "city": "Port Townsend",
-      "county": "Jefferson"
+      "city": "Algona",
+      "county": "King"
+    },
+    {
+      "zip": "98031",
+      "count": 53,
+      "city": "Kent",
+      "county": "King"
     },
     {
       "zip": "98077",
@@ -811,16 +799,40 @@
       "county": ""
     },
     {
+      "zip": "98312",
+      "count": 53,
+      "city": "Bremerton",
+      "county": "Kitsap"
+    },
+    {
+      "zip": "98028",
+      "count": 53,
+      "city": "Kenmore",
+      "county": "King"
+    },
+    {
       "zip": "98632",
       "count": 53,
       "city": "Longview",
       "county": "Cowlitz"
     },
     {
-      "zip": "98312",
+      "zip": "98368",
       "count": 52,
-      "city": "Bremerton",
-      "county": "Kitsap"
+      "city": "Port Townsend",
+      "county": "Jefferson"
+    },
+    {
+      "zip": "98055",
+      "count": 52,
+      "city": "Renton",
+      "county": "King"
+    },
+    {
+      "zip": "98371",
+      "count": 51,
+      "city": "Puyallup",
+      "county": "Pierce"
     },
     {
       "zip": "98119",
@@ -829,16 +841,28 @@
       "county": "King"
     },
     {
+      "zip": "98406",
+      "count": 51,
+      "city": "Tacoma",
+      "county": "Pierce"
+    },
+    {
+      "zip": "99212",
+      "count": 51,
+      "city": "Spokane",
+      "county": "Spokane"
+    },
+    {
       "zip": "98101",
       "count": 51,
       "city": "Seattle",
       "county": "King"
     },
     {
-      "zip": "98055",
+      "zip": "98087",
       "count": 51,
-      "city": "Renton",
-      "county": "King"
+      "city": "",
+      "county": ""
     },
     {
       "zip": "98373",
@@ -848,21 +872,15 @@
     },
     {
       "zip": "98177",
-      "count": 50,
+      "count": 49,
       "city": "Seattle",
       "county": "King"
     },
     {
-      "zip": "99212",
-      "count": 50,
-      "city": "Spokane",
-      "county": "Spokane"
-    },
-    {
-      "zip": "98371",
+      "zip": "98146",
       "count": 49,
-      "city": "Puyallup",
-      "county": "Pierce"
+      "city": "Burien",
+      "county": "King"
     },
     {
       "zip": "98112",
@@ -877,34 +895,16 @@
       "county": "Chelan"
     },
     {
-      "zip": "98087",
-      "count": 49,
-      "city": "",
-      "county": ""
+      "zip": "98499",
+      "count": 48,
+      "city": "Lakewood Center",
+      "county": "Pierce"
     },
     {
       "zip": "99324",
-      "count": 48,
+      "count": 47,
       "city": "College Place",
       "county": "Walla Walla"
-    },
-    {
-      "zip": "98271",
-      "count": 48,
-      "city": "Marysville",
-      "county": "Snohomish"
-    },
-    {
-      "zip": "98146",
-      "count": 48,
-      "city": "Burien",
-      "county": "King"
-    },
-    {
-      "zip": "98406",
-      "count": 48,
-      "city": "Tacoma",
-      "county": "Pierce"
     },
     {
       "zip": "99016",
@@ -914,26 +914,8 @@
     },
     {
       "zip": "98032",
-      "count": 47,
+      "count": 46,
       "city": "Kent",
-      "county": "King"
-    },
-    {
-      "zip": "98245",
-      "count": 47,
-      "city": "Eastsound",
-      "county": "San Juan"
-    },
-    {
-      "zip": "98499",
-      "count": 47,
-      "city": "Lakewood Center",
-      "county": "Pierce"
-    },
-    {
-      "zip": "98003",
-      "count": 47,
-      "city": "Federal Way",
       "county": "King"
     },
     {
@@ -941,6 +923,18 @@
       "count": 46,
       "city": "Kennewick",
       "county": "Benton"
+    },
+    {
+      "zip": "98245",
+      "count": 46,
+      "city": "Eastsound",
+      "county": "San Juan"
+    },
+    {
+      "zip": "98271",
+      "count": 46,
+      "city": "Marysville",
+      "county": "Snohomish"
     },
     {
       "zip": "99354",
@@ -955,21 +949,15 @@
       "county": "Benton"
     },
     {
-      "zip": "98008",
+      "zip": "98003",
       "count": 45,
-      "city": "Bellevue",
+      "city": "Federal Way",
       "county": "King"
     },
     {
-      "zip": "99026",
+      "zip": "98008",
       "count": 45,
-      "city": "Nine Mile Falls",
-      "county": "Stevens"
-    },
-    {
-      "zip": "98070",
-      "count": 45,
-      "city": "Vashon",
+      "city": "Bellevue",
       "county": "King"
     },
     {
@@ -985,6 +973,18 @@
       "county": "Skagit"
     },
     {
+      "zip": "99026",
+      "count": 44,
+      "city": "Nine Mile Falls",
+      "county": "Stevens"
+    },
+    {
+      "zip": "98070",
+      "count": 44,
+      "city": "Vashon",
+      "county": "King"
+    },
+    {
       "zip": "98168",
       "count": 43,
       "city": "Tukwila",
@@ -998,7 +998,7 @@
     },
     {
       "zip": "99336",
-      "count": 41,
+      "count": 42,
       "city": "Kennewick",
       "county": "Benton"
     },
@@ -1033,16 +1033,10 @@
       "county": "Whatcom"
     },
     {
-      "zip": "98626",
+      "zip": "99202",
       "count": 40,
-      "city": "Kelso",
-      "county": "Cowlitz"
-    },
-    {
-      "zip": "99353",
-      "count": 40,
-      "city": "Zcta 99353",
-      "county": "Benton"
+      "city": "Spokane",
+      "county": "Spokane"
     },
     {
       "zip": "99021",
@@ -1057,10 +1051,10 @@
       "county": "Yakima"
     },
     {
-      "zip": "99202",
+      "zip": "98626",
       "count": 39,
-      "city": "Spokane",
-      "county": "Spokane"
+      "city": "Kelso",
+      "county": "Cowlitz"
     },
     {
       "zip": "98674",
@@ -1069,16 +1063,10 @@
       "county": "Cowlitz"
     },
     {
-      "zip": "99006",
+      "zip": "99217",
       "count": 38,
-      "city": "Deer Park",
+      "city": "Spokane",
       "county": "Spokane"
-    },
-    {
-      "zip": "98660",
-      "count": 38,
-      "city": "Vancouver",
-      "county": "Clark"
     },
     {
       "zip": "98106",
@@ -1093,10 +1081,10 @@
       "county": "Spokane"
     },
     {
-      "zip": "99201",
+      "zip": "99353",
       "count": 38,
-      "city": "Spokane",
-      "county": "Spokane"
+      "city": "Zcta 99353",
+      "county": "Benton"
     },
     {
       "zip": "99005",
@@ -1105,9 +1093,9 @@
       "county": "Spokane"
     },
     {
-      "zip": "99217",
+      "zip": "99006",
       "count": 37,
-      "city": "Spokane",
+      "city": "Deer Park",
       "county": "Spokane"
     },
     {
@@ -1135,6 +1123,12 @@
       "county": ""
     },
     {
+      "zip": "98660",
+      "count": 37,
+      "city": "Vancouver",
+      "county": "Clark"
+    },
+    {
       "zip": "98053",
       "count": 37,
       "city": "Redmond",
@@ -1145,6 +1139,12 @@
       "count": 37,
       "city": "Eatonville",
       "county": "Pierce"
+    },
+    {
+      "zip": "99201",
+      "count": 37,
+      "city": "Spokane",
+      "county": "Spokane"
     },
     {
       "zip": "99216",
@@ -1171,16 +1171,28 @@
       "county": "Pierce"
     },
     {
+      "zip": "98506",
+      "count": 35,
+      "city": "Lacey",
+      "county": "Thurston"
+    },
+    {
+      "zip": "98359",
+      "count": 35,
+      "city": "Olalla",
+      "county": "Kitsap"
+    },
+    {
       "zip": "98010",
-      "count": 36,
+      "count": 35,
       "city": "Black Diamond",
       "county": "King"
     },
     {
-      "zip": "98629",
+      "zip": "98445",
       "count": 35,
-      "city": "La Center",
-      "county": "Clark"
+      "city": "Parkland",
+      "county": "Pierce"
     },
     {
       "zip": "98390",
@@ -1189,34 +1201,16 @@
       "county": "Pierce"
     },
     {
-      "zip": "98506",
+      "zip": "98531",
       "count": 34,
-      "city": "Lacey",
-      "county": "Thurston"
+      "city": "Centralia",
+      "county": "Lewis"
     },
     {
-      "zip": "98024",
+      "zip": "98629",
       "count": 34,
-      "city": "Fall City",
-      "county": "King"
-    },
-    {
-      "zip": "98359",
-      "count": 34,
-      "city": "Olalla",
-      "county": "Kitsap"
-    },
-    {
-      "zip": "98445",
-      "count": 34,
-      "city": "Parkland",
-      "county": "Pierce"
-    },
-    {
-      "zip": "98037",
-      "count": 33,
-      "city": "Lynnwood",
-      "county": "Snohomish"
+      "city": "La Center",
+      "county": "Clark"
     },
     {
       "zip": "98901",
@@ -1231,28 +1225,34 @@
       "county": "King"
     },
     {
-      "zip": "98902",
+      "zip": "98024",
       "count": 33,
+      "city": "Fall City",
+      "county": "King"
+    },
+    {
+      "zip": "98902",
+      "count": 32,
       "city": "Yakima",
       "county": "Yakima"
     },
     {
-      "zip": "98531",
-      "count": 33,
-      "city": "Centralia",
-      "county": "Lewis"
-    },
-    {
       "zip": "98188",
-      "count": 33,
+      "count": 32,
       "city": "Tukwila",
       "county": "King"
     },
     {
-      "zip": "99218",
+      "zip": "98037",
       "count": 31,
-      "city": "Spokane",
-      "county": "Spokane"
+      "city": "Lynnwood",
+      "county": "Snohomish"
+    },
+    {
+      "zip": "98823",
+      "count": 31,
+      "city": "Ephrata",
+      "county": "Grant"
     },
     {
       "zip": "98363",
@@ -1261,10 +1261,10 @@
       "county": "Clallam"
     },
     {
-      "zip": "98823",
+      "zip": "99350",
       "count": 30,
-      "city": "Ephrata",
-      "county": "Grant"
+      "city": "Prosser",
+      "county": "Benton"
     },
     {
       "zip": "98467",
@@ -1273,22 +1273,22 @@
       "county": "Pierce"
     },
     {
+      "zip": "99218",
+      "count": 30,
+      "city": "Spokane",
+      "county": "Spokane"
+    },
+    {
+      "zip": "98239",
+      "count": 30,
+      "city": "Coupeville",
+      "county": "Island"
+    },
+    {
       "zip": "98108",
       "count": 30,
       "city": "Tukwila",
       "county": "King"
-    },
-    {
-      "zip": "99350",
-      "count": 29,
-      "city": "Prosser",
-      "county": "Benton"
-    },
-    {
-      "zip": "98239",
-      "count": 29,
-      "city": "Coupeville",
-      "county": "Island"
     },
     {
       "zip": "99022",
@@ -1303,16 +1303,10 @@
       "county": "Pierce"
     },
     {
-      "zip": "99207",
+      "zip": "98402",
       "count": 29,
-      "city": "Spokane",
-      "county": "Spokane"
-    },
-    {
-      "zip": "98310",
-      "count": 29,
-      "city": "Bremerton",
-      "county": "Kitsap"
+      "city": "Tacoma",
+      "county": "Pierce"
     },
     {
       "zip": "99037",
@@ -1321,28 +1315,28 @@
       "county": "Spokane"
     },
     {
-      "zip": "98402",
+      "zip": "99207",
       "count": 28,
-      "city": "Tacoma",
-      "county": "Pierce"
+      "city": "Spokane",
+      "county": "Spokane"
     },
     {
-      "zip": "98404",
+      "zip": "98310",
       "count": 28,
-      "city": "Tacoma",
-      "county": "Pierce"
+      "city": "Bremerton",
+      "county": "Kitsap"
+    },
+    {
+      "zip": "98057",
+      "count": 27,
+      "city": "",
+      "county": ""
     },
     {
       "zip": "98233",
       "count": 27,
       "city": "Burlington",
       "county": "Skagit"
-    },
-    {
-      "zip": "98249",
-      "count": 27,
-      "city": "Freeland",
-      "county": "Island"
     },
     {
       "zip": "98409",
@@ -1357,10 +1351,16 @@
       "county": "Pend Oreille"
     },
     {
-      "zip": "98057",
-      "count": 26,
-      "city": "",
-      "county": ""
+      "zip": "98580",
+      "count": 27,
+      "city": "Roy",
+      "county": "Pierce"
+    },
+    {
+      "zip": "98404",
+      "count": 27,
+      "city": "Tacoma",
+      "county": "Pierce"
     },
     {
       "zip": "98002",
@@ -1375,16 +1375,16 @@
       "county": "Kittitas"
     },
     {
-      "zip": "98580",
+      "zip": "98249",
       "count": 26,
-      "city": "Roy",
-      "county": "Pierce"
+      "city": "Freeland",
+      "county": "Island"
     },
     {
-      "zip": "98261",
+      "zip": "98327",
       "count": 25,
-      "city": "Lopez",
-      "county": "San Juan"
+      "city": "Du Pont",
+      "county": "Pierce"
     },
     {
       "zip": "99344",
@@ -1399,10 +1399,16 @@
       "county": "Snohomish"
     },
     {
-      "zip": "98327",
-      "count": 24,
-      "city": "Du Pont",
+      "zip": "98403",
+      "count": 25,
+      "city": "Tacoma",
       "county": "Pierce"
+    },
+    {
+      "zip": "98261",
+      "count": 24,
+      "city": "Lopez",
+      "county": "San Juan"
     },
     {
       "zip": "98232",
@@ -1423,12 +1429,6 @@
       "county": "Pierce"
     },
     {
-      "zip": "98403",
-      "count": 24,
-      "city": "Tacoma",
-      "county": "Pierce"
-    },
-    {
       "zip": "98257",
       "count": 23,
       "city": "La Conner",
@@ -1439,6 +1439,24 @@
       "count": 23,
       "city": "Medina",
       "county": "King"
+    },
+    {
+      "zip": "98816",
+      "count": 23,
+      "city": "Chelan",
+      "county": "Chelan"
+    },
+    {
+      "zip": "98346",
+      "count": 23,
+      "city": "Kingston",
+      "county": "Kitsap"
+    },
+    {
+      "zip": "98848",
+      "count": 23,
+      "city": "Quincy",
+      "county": "Grant"
     },
     {
       "zip": "98862",
@@ -1453,28 +1471,16 @@
       "county": "Klickitat"
     },
     {
-      "zip": "98816",
-      "count": 22,
-      "city": "Chelan",
-      "county": "Chelan"
-    },
-    {
-      "zip": "98346",
-      "count": 22,
-      "city": "Kingston",
-      "county": "Kitsap"
-    },
-    {
-      "zip": "98848",
-      "count": 22,
-      "city": "Quincy",
-      "county": "Grant"
-    },
-    {
       "zip": "98675",
       "count": 21,
       "city": "Yacolt",
       "county": "Clark"
+    },
+    {
+      "zip": "98648",
+      "count": 21,
+      "city": "Stevenson",
+      "county": "Skamania"
     },
     {
       "zip": "99003",
@@ -1513,16 +1519,16 @@
       "county": "Pierce"
     },
     {
-      "zip": "98648",
-      "count": 20,
-      "city": "Stevenson",
-      "county": "Skamania"
-    },
-    {
       "zip": "98349",
       "count": 20,
       "city": "Home",
       "county": "Pierce"
+    },
+    {
+      "zip": "98625",
+      "count": 20,
+      "city": "Kalama",
+      "county": "Cowlitz"
     },
     {
       "zip": "98365",
@@ -1531,10 +1537,34 @@
       "county": "Jefferson"
     },
     {
+      "zip": "98148",
+      "count": 20,
+      "city": "Normandy Park",
+      "county": "King"
+    },
+    {
+      "zip": "99036",
+      "count": 20,
+      "city": "Valleyford",
+      "county": "Spokane"
+    },
+    {
+      "zip": "99320",
+      "count": 20,
+      "city": "Benton City",
+      "county": "Benton"
+    },
+    {
       "zip": "98528",
       "count": 20,
       "city": "Bear Creek",
       "county": "Mason"
+    },
+    {
+      "zip": "98388",
+      "count": 19,
+      "city": "Steilacoom",
+      "county": "Pierce"
     },
     {
       "zip": "98815",
@@ -1543,52 +1573,22 @@
       "county": "Chelan"
     },
     {
-      "zip": "98625",
-      "count": 19,
-      "city": "Kalama",
-      "county": "Cowlitz"
-    },
-    {
-      "zip": "98148",
-      "count": 19,
-      "city": "Normandy Park",
-      "county": "King"
-    },
-    {
-      "zip": "99036",
-      "count": 19,
-      "city": "Valleyford",
-      "county": "Spokane"
-    },
-    {
-      "zip": "99320",
-      "count": 19,
-      "city": "Benton City",
-      "county": "Benton"
-    },
-    {
       "zip": "98579",
       "count": 19,
       "city": "Rochester",
       "county": "Thurston"
     },
     {
-      "zip": "99204",
-      "count": 19,
-      "city": "Spokane",
-      "county": "Spokane"
-    },
-    {
-      "zip": "98388",
-      "count": 18,
-      "city": "Steilacoom",
-      "county": "Pierce"
-    },
-    {
       "zip": "98424",
       "count": 18,
       "city": "Fife",
       "county": "Pierce"
+    },
+    {
+      "zip": "99204",
+      "count": 18,
+      "city": "Spokane",
+      "county": "Spokane"
     },
     {
       "zip": "98856",
@@ -1609,16 +1609,16 @@
       "county": "Yakima"
     },
     {
+      "zip": "98380",
+      "count": 17,
+      "city": "Seabeck",
+      "county": "Kitsap"
+    },
+    {
       "zip": "98930",
       "count": 16,
       "city": "Grandview",
       "county": "Yakima"
-    },
-    {
-      "zip": "98380",
-      "count": 16,
-      "city": "Seabeck",
-      "county": "Kitsap"
     },
     {
       "zip": "98252",
@@ -1657,12 +1657,6 @@
       "county": "Pierce"
     },
     {
-      "zip": "98601",
-      "count": 14,
-      "city": "Amboy",
-      "county": "Clark"
-    },
-    {
       "zip": "98443",
       "count": 14,
       "city": "Tacoma",
@@ -1693,10 +1687,10 @@
       "county": "Ferry"
     },
     {
-      "zip": "99111",
+      "zip": "98601",
       "count": 13,
-      "city": "Colfax",
-      "county": "Whitman"
+      "city": "Amboy",
+      "county": "Clark"
     },
     {
       "zip": "98247",
@@ -1715,6 +1709,12 @@
       "count": 13,
       "city": "Castle Rock",
       "county": "Cowlitz"
+    },
+    {
+      "zip": "99111",
+      "count": 12,
+      "city": "Colfax",
+      "county": "Whitman"
     },
     {
       "zip": "98294",
@@ -1747,16 +1747,16 @@
       "county": "Okanogan"
     },
     {
+      "zip": "98418",
+      "count": 12,
+      "city": "",
+      "county": ""
+    },
+    {
       "zip": "98612",
       "count": 11,
       "city": "Cathlamet",
       "county": "Wahkiakum"
-    },
-    {
-      "zip": "98546",
-      "count": 11,
-      "city": "Grapeview",
-      "county": "Mason"
     },
     {
       "zip": "98253",
@@ -1777,6 +1777,12 @@
       "county": "Lewis"
     },
     {
+      "zip": "98844",
+      "count": 11,
+      "city": "Oroville",
+      "county": "Okanogan"
+    },
+    {
       "zip": "98650",
       "count": 11,
       "city": "Trout Lake",
@@ -1789,16 +1795,16 @@
       "county": "Stevens"
     },
     {
-      "zip": "98418",
-      "count": 11,
-      "city": "",
-      "county": ""
-    },
-    {
       "zip": "98589",
       "count": 11,
       "city": "Tenino",
       "county": "Thurston"
+    },
+    {
+      "zip": "98546",
+      "count": 10,
+      "city": "Grapeview",
+      "county": "Mason"
     },
     {
       "zip": "99323",
@@ -1823,12 +1829,6 @@
       "count": 10,
       "city": "",
       "county": ""
-    },
-    {
-      "zip": "98844",
-      "count": 10,
-      "city": "Oroville",
-      "county": "Okanogan"
     },
     {
       "zip": "99122",
@@ -1897,6 +1897,12 @@
       "county": "Whatcom"
     },
     {
+      "zip": "98640",
+      "count": 9,
+      "city": "Ocean Park",
+      "county": "Pacific"
+    },
+    {
       "zip": "98337",
       "count": 9,
       "city": "Bremerton",
@@ -1945,12 +1951,6 @@
       "county": "Whatcom"
     },
     {
-      "zip": "99185",
-      "count": 8,
-      "city": "Wilbur",
-      "county": "Lincoln"
-    },
-    {
       "zip": "98206",
       "count": 8,
       "city": "",
@@ -1967,18 +1967,6 @@
       "count": 8,
       "city": "Montesano",
       "county": "Grays Harbor"
-    },
-    {
-      "zip": "99357",
-      "count": 8,
-      "city": "Royal City",
-      "county": "Grant"
-    },
-    {
-      "zip": "98640",
-      "count": 8,
-      "city": "Ocean Park",
-      "county": "Pacific"
     },
     {
       "zip": "98577",
@@ -2003,18 +1991,6 @@
       "count": 7,
       "city": "Concrete",
       "county": "Skagit"
-    },
-    {
-      "zip": "98951",
-      "count": 7,
-      "city": "Wapato",
-      "county": "Yakima"
-    },
-    {
-      "zip": "98843",
-      "count": 7,
-      "city": "Orondo",
-      "county": "Douglas"
     },
     {
       "zip": "99148",
@@ -2053,10 +2029,28 @@
       "county": "Jefferson"
     },
     {
+      "zip": "99185",
+      "count": 7,
+      "city": "Wilbur",
+      "county": "Lincoln"
+    },
+    {
       "zip": "98340",
       "count": 7,
       "city": "Hansville",
       "county": "Kitsap"
+    },
+    {
+      "zip": "99357",
+      "count": 7,
+      "city": "Royal City",
+      "county": "Grant"
+    },
+    {
+      "zip": "98251",
+      "count": 7,
+      "city": "Gold Bar",
+      "county": "Snohomish"
     },
     {
       "zip": "99011",
@@ -2075,12 +2069,6 @@
       "count": 6,
       "city": "Waitsburg",
       "county": "Walla Walla"
-    },
-    {
-      "zip": "99328",
-      "count": 6,
-      "city": "Dayton",
-      "county": "Columbia"
     },
     {
       "zip": "99347",
@@ -2149,6 +2137,12 @@
       "county": ""
     },
     {
+      "zip": "98951",
+      "count": 6,
+      "city": "Wapato",
+      "county": "Yakima"
+    },
+    {
       "zip": "98243",
       "count": 6,
       "city": "Deer Harbor",
@@ -2173,10 +2167,10 @@
       "county": "Kitsap"
     },
     {
-      "zip": "98251",
+      "zip": "98843",
       "count": 6,
-      "city": "Gold Bar",
-      "county": "Snohomish"
+      "city": "Orondo",
+      "county": "Douglas"
     },
     {
       "zip": "98438",
@@ -2191,12 +2185,6 @@
       "county": "Walla Walla"
     },
     {
-      "zip": "99001",
-      "count": 6,
-      "city": "Airway Heights",
-      "county": "Spokane"
-    },
-    {
       "zip": "98433",
       "count": 6,
       "city": "Fort Lewis",
@@ -2207,6 +2195,12 @@
       "count": 5,
       "city": "Grand Coulee",
       "county": "Grant"
+    },
+    {
+      "zip": "99328",
+      "count": 5,
+      "city": "Dayton",
+      "county": "Columbia"
     },
     {
       "zip": "98624",
@@ -2227,10 +2221,28 @@
       "county": "Lincoln"
     },
     {
+      "zip": "98377",
+      "count": 5,
+      "city": "Randle",
+      "county": "Lewis"
+    },
+    {
+      "zip": "98396",
+      "count": 5,
+      "city": "Wilkeson",
+      "county": "Pierce"
+    },
+    {
       "zip": "98558",
       "count": 5,
       "city": "",
       "county": ""
+    },
+    {
+      "zip": "98262",
+      "count": 5,
+      "city": "Lummi Island",
+      "county": "Whatcom"
     },
     {
       "zip": "98828",
@@ -2281,6 +2293,12 @@
       "county": "Stevens"
     },
     {
+      "zip": "99001",
+      "count": 5,
+      "city": "Airway Heights",
+      "county": "Spokane"
+    },
+    {
       "zip": "99302",
       "count": 5,
       "city": "",
@@ -2305,22 +2323,10 @@
       "county": "San Juan"
     },
     {
-      "zip": "98331",
-      "count": 4,
-      "city": "Forks",
-      "county": "Clallam"
-    },
-    {
       "zip": "99161",
       "count": 4,
       "city": "Palouse",
       "county": "Whitman"
-    },
-    {
-      "zip": "98396",
-      "count": 4,
-      "city": "Wilkeson",
-      "county": "Pierce"
     },
     {
       "zip": "98565",
@@ -2333,12 +2339,6 @@
       "count": 4,
       "city": "Toppenish",
       "county": "Yakima"
-    },
-    {
-      "zip": "98262",
-      "count": 4,
-      "city": "Lummi Island",
-      "county": "Whatcom"
     },
     {
       "zip": "98812",
@@ -2443,12 +2443,6 @@
       "county": "Kitsap"
     },
     {
-      "zip": "98231",
-      "count": 3,
-      "city": "",
-      "county": ""
-    },
-    {
       "zip": "98538",
       "count": 3,
       "city": "Curtis",
@@ -2467,10 +2461,22 @@
       "county": ""
     },
     {
+      "zip": "98331",
+      "count": 3,
+      "city": "Forks",
+      "county": "Clallam"
+    },
+    {
       "zip": "99343",
       "count": 3,
       "city": "Mesa",
       "county": "Franklin"
+    },
+    {
+      "zip": "98395",
+      "count": 3,
+      "city": "",
+      "county": ""
     },
     {
       "zip": "98291",
@@ -2581,12 +2587,6 @@
       "county": ""
     },
     {
-      "zip": "98377",
-      "count": 3,
-      "city": "Randle",
-      "county": "Lewis"
-    },
-    {
       "zip": "98934",
       "count": 3,
       "city": "Kittitas",
@@ -2689,6 +2689,12 @@
       "county": "Lewis"
     },
     {
+      "zip": "98231",
+      "count": 2,
+      "city": "",
+      "county": ""
+    },
+    {
       "zip": "98286",
       "count": 2,
       "city": "Shaw Island",
@@ -2711,12 +2717,6 @@
       "count": 2,
       "city": "Monitor",
       "county": "Chelan"
-    },
-    {
-      "zip": "98395",
-      "count": 2,
-      "city": "",
-      "county": ""
     },
     {
       "zip": "98417",
@@ -3056,12 +3056,6 @@
     },
     {
       "zip": "98141",
-      "count": 1,
-      "city": "",
-      "county": ""
-    },
-    {
-      "zip": "98464",
       "count": 1,
       "city": "",
       "county": ""
@@ -3452,31 +3446,31 @@
     }
   ],
   "summary": {
-    "total_pilots": 18421,
-    "total_zips": 575,
-    "avg_per_zip": 32.0,
-    "max_count": 269,
+    "total_pilots": 18422,
+    "total_zips": 574,
+    "avg_per_zip": 32.1,
+    "max_count": 267,
     "median_count": 12,
     "top_counties": [
       {
         "county": "King",
-        "count": 4837
+        "count": 4822
       },
       {
         "county": "Pierce",
-        "count": 2097
+        "count": 2104
       },
       {
         "county": "Snohomish",
-        "count": 1625
+        "count": 1627
       },
       {
         "county": "Clark",
-        "count": 1567
+        "count": 1573
       },
       {
         "county": "Spokane",
-        "count": 1253
+        "count": 1248
       },
       {
         "county": "Unknown",
@@ -3492,7 +3486,7 @@
       },
       {
         "county": "Whatcom",
-        "count": 480
+        "count": 484
       },
       {
         "county": "Skagit",
@@ -3500,53 +3494,53 @@
       },
       {
         "county": "Island",
-        "count": 337
+        "count": 338
       },
       {
         "county": "Yakima",
-        "count": 309
+        "count": 307
       },
       {
         "county": "Benton",
-        "count": 303
+        "count": 304
       },
       {
         "county": "Grant",
-        "count": 241
+        "count": 242
       },
       {
         "county": "Chelan",
-        "count": 235
+        "count": 237
       }
     ],
     "top_zips": [
       {
         "zip": "98335",
-        "count": 269,
+        "count": 267,
         "city": "Gig Harbor",
         "county": "Pierce"
       },
       {
         "zip": "98607",
-        "count": 246,
+        "count": 245,
         "city": "Camas",
         "county": "Clark"
       },
       {
         "zip": "98391",
-        "count": 225,
+        "count": 221,
         "city": "",
         "county": ""
       },
       {
         "zip": "98221",
-        "count": 202,
+        "count": 201,
         "city": "Anacortes",
         "county": "Skagit"
       },
       {
         "zip": "98277",
-        "count": 196,
+        "count": 197,
         "city": "Oak Harbor",
         "county": "Island"
       },
@@ -3558,13 +3552,13 @@
       },
       {
         "zip": "98042",
-        "count": 161,
+        "count": 158,
         "city": "Kent",
         "county": "King"
       },
       {
         "zip": "98604",
-        "count": 152,
+        "count": 153,
         "city": "Battle Ground",
         "county": "Clark"
       },
